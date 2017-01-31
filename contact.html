@@ -5,57 +5,6 @@
     <div class="contact">
 
         <!--Main title-->
-
-        <div class="main-title">
-            <h1>map location</h1>
-            <div class="divider">
-                <div class="zigzag large clearfix " data-svg-drawing="yes">
-                    <svg  xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns="http://www.w3.org/2000/svg" version="1.1">
-						<path d="M1.357,12.26 10.807,2.81 20.328,12.332
-							29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 "  style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"/>
-						</svg>
-                </div>
-            </div>
-        </div>
-
-        <!--End main title-->
-
-
-        <!--Content-->
-        <div class="content">
-
-            <!--Block content-->
-            <div class="block-content ">
-
-                <!--Map-->
-                <div class="block-map">
-
-                    <!--Row-->
-                    <div class="row">
-
-
-                        <div class="col-md-12">
-
-                            <div id="map"></div>
-
-                        </div>
-
-                    </div>
-                    <!--End row-->
-
-                </div>
-                <!--End map-->
-
-            </div>
-            <!--End block content-->
-
-
-        </div>
-        <!--End content-->
-
-
-        <!--Main title-->
-
         <div class="main-title">
             <h1>contact info</h1>
             <div class="divider">
@@ -67,7 +16,6 @@
                 </div>
             </div>
         </div>
-
         <!--End main title-->
 
 
@@ -234,9 +182,7 @@
 
 
                 <div class="col-md-12">
-                    <a class="but opc-1 ico" href="#">Download my cv</a>
-                    <a class="but opc-2 ico" href="#">Print my resume</a>
-
+                    <a class="but opc-1 ico" href="resume/cv.pdf" download>Download my cv</a>
                 </div>
 
 
@@ -253,82 +199,3 @@
 
 </section>
 <!--End contact tab-->
-
-
-<script>
-
-    (function ($) {
-        "use strict";
-
-        $(document).ready(function () {
-//---------------------------------- Google map location -----------------------------------------//
-
-            $("#main-nav.tabbed > ul").data("tabs").onClick(function(index) {
-                var styles = [
-                        {
-                            stylers: [
-                                {saturation: -100}
-
-                            ]
-                        }, {
-                            featureType: 'road',
-                            elementType: 'geometry',
-                            stylers: [
-                                {hue: "#74b7b0"},
-                                {visibility: 'simplified'}
-                            ]
-                        }, {
-                            featureType: 'road',
-                            elementType: 'labels',
-                            stylers: [
-                                {visibility: 'on'}
-                            ]
-                        }
-                    ],
-
-                    lat = -33.867487,
-                    lng = 151.20699,
-
-
-                    customMap = new google.maps.StyledMapType(styles,
-                        {name: 'Styled Map'}),
-
-
-                    mapOptions = {
-                        zoom: 14,
-                        scrollwheel: false,
-                        disableDefaultUI: true,
-                        center: new google.maps.LatLng(lat, lng),
-                        mapTypeControlOptions: {
-                            mapTypeIds: [google.maps.MapTypeId.ROADMAP]
-                        }
-                    },
-                    map = new google.maps.Map(document.getElementById('map'), mapOptions),
-                    myLatlng = new google.maps.LatLng(lat, lng),
-
-
-                    marker = new google.maps.Marker({
-                        position: myLatlng,
-                        map: map,
-                        icon: {
-                            url: 'img/marker.png',
-                            scaledSize: new google.maps.Size(26, 42)
-                        }
-                    });
-
-
-                map.mapTypes.set('map_style', customMap);
-                map.setMapTypeId('map_style');
-
-
-            });
-
-
-//---------------------------------- End google map location -----------------------------------------//
-
-
-        });
-
-    })(jQuery);
-
-</script>
