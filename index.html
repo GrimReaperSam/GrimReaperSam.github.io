@@ -147,6 +147,7 @@
                 return;
             }
             currentLink = link;
+            $("html, body").animate({ scrollTop: 0 });
             $("#content-div").fadeOut(350, function() {
                 $("#content-div").empty().load(link).fadeIn(800);
             });
