@@ -411,8 +411,7 @@
 
 
 .vc{
-
-	 display: -webkit-flex;
+  display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
@@ -422,7 +421,6 @@
   -webkit-justify-content: center;
   flex-direction: row;
   -webkit-flex-direction: row;
-
 }
 
 
@@ -645,7 +643,7 @@
 	color:#ffffff;
 	background: #558e6a;
 	border-radius:6px;
-	-moz-border-radius:6px
+	-moz-border-radius:6px;
 	-webkit-border-radius :6px;
 	-ms-border-radius:6px;
 	-o-border-radius: 6px;
@@ -1298,13 +1296,13 @@ span.meta-date{
 
 
 
-#success, #error {
+#success, #error, #sending {
     display: none;
     position: relative;
 }
 
 
-#success h2, #error h2 {
+#success h2, #error h2, #sending h2 {
     color: #33373d;
     font-size: 11px;
     left: 0;

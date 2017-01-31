@@ -38,7 +38,9 @@
                                 <!--Address info-->
                                 <div class="address-info">
                                     <i class="icon-location"></i>
-                                    <p>The Company Name Inc.1234 Street Road <br>City Name,IN 567 890.
+                                    <p>Avenue Dapple 14, Studiomodernes 229
+                                        <br/>
+                                        1006-Lausanne, Switzerland
                                     </p>
                                 </div>
                                 <!--End address info-->
@@ -49,13 +51,13 @@
                                     <ul>
                                         <li>
                                             <div class="ico"><i class="icon-mail"></i></div>
-                                            <p>Email : name@gmail.com </p></li>
+                                            <p>fayezlahoud@gmail.com </p></li>
                                         <li>
                                             <div class="ico"><i class="icon-phone"></i></div>
-                                            <p>Tel : + 123-456-789</p></li>
+                                            <p>+41 078 848 01 94</p></li>
                                         <li>
                                             <div class="ico"><i class="icon-link"></i></div>
-                                            <p>WebSite : <a href="#">www.yoursite.com</a></p></li>
+                                            <p><a href="http://fayez.me">fayez.me</a></p></li>
                                     </ul>
                                 </div>
                                 <!--End contact info-->
@@ -100,21 +102,15 @@
 
             <!--Block content-->
             <div class="block-content ">
-
                 <!--Contact-->
                 <div class="block-contact margBSSmall">
-
                     <!--Row-->
                     <div class="row">
-
                         <div class="col-md-12">
-
-
-                            <form class="contact-form" method="post" action="send.php">
+                            <form class="contact-form">
 
                                 <!--Input columns-->
                                 <div class="input-columns clearfix">
-
                                     <div class="column1">
                                         <div class="column-inner">
                                             <input type="text" placeholder="Name" value="" id="name"
@@ -126,47 +122,40 @@
                                     <div class="column2">
                                         <div class="column-inner">
                                             <input type="text" placeholder="Email" value="" id="email"
-                                                   name="email">
+                                                   name="_replyto">
                                         </div>
                                     </div>
                                     <!--End column-->
-
                                 </div>
                                 <!--End input columns-->
 
                                 <input type="text" placeholder="Subject" value="" id="subject"
-                                       name="subject">
+                                       name="_subject">
+                                <input type="text" name="_gotcha" style="display:none" />
                                 <textarea name="message" placeholder="Message" id="message" cols="45"
                                           rows="10"></textarea>
                                 <input type="submit" value="send your email" class="but opc-2 submit">
                             </form>
 
                             <!--Contact form message-->
+                            <div id="sending"><h2>Sending message…</h2></div>
                             <div id="success"><h2>Your message has been sent. Thank you!</h2></div>
                             <div id="error"><h2>Sorry your message can not be sent.</h2></div>
                             <!--End contact form message-->
 
-
                         </div>
-
-
                     </div>
                     <!--End row-->
-
                 </div>
                 <!--End contact-->
-
             </div>
             <!--End block content-->
-
-
         </div>
         <!--End content-->
 
 
         <!--Button-->
         <div class="button ofsInTop tCenter">
-
             <div class="divider">
                 <div class="zigzag large clearfix " data-svg-drawing="yes">
                     <svg  xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns="http://www.w3.org/2000/svg" version="1.1">
@@ -176,26 +165,84 @@
                 </div>
             </div>
 
-
             <!--Row-->
             <div class="row ">
-
-
                 <div class="col-md-12">
                     <a class="but opc-1 ico" href="resume/cv.pdf" download>Download my cv</a>
                 </div>
-
-
             </div>
             <!--End row-->
-
-
         </div>
         <!--End button-->
-
-
     </div>
     <!--End contact-->
 
 </section>
 <!--End contact tab-->
+
+<script>
+
+    $('.contact-form').submit(function() {
+
+        $('input#name').removeClass("errorForm");
+        $('textarea#message').removeClass("errorForm");
+        $('input#email').removeClass("errorForm");
+
+        var error = false;
+        var name = $('input#name').val();
+        if(name == "" || name == " ") {
+            error = true;
+            $('input#name').addClass("errorForm");
+        }
+
+
+        var msg = $('textarea#message').val();
+        if(msg == "" || msg == " ") {
+            error = true;
+            $('textarea#message').addClass("errorForm");
+
+        }
+
+        var email_compare = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+        var email = $('input#email').val();
+        if (email == "" || email == " ") {
+            $('input#email').addClass("errorForm");
+            error = true;
+        }else if (!email_compare.test(email)) {
+            $('input#email').addClass("errorForm");
+            error = true;
+        }
+
+        if(error == true) {
+            return false;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: '//formspree.io/fayezlahoud@gmail.com',
+            data: $('.contact-form').serialize(),
+            dataType: "json",
+            beforeSend: function() {
+                $('#sending').fadeIn('slow');
+                $('.contact-form')[0].reset()
+            },
+            success: function(message) {
+                $('#sending').hide();
+                if(message.success){
+                    $('#success').fadeIn('slow');
+                } else {
+                    $('#error').fadeIn('slow');
+                }
+            },
+            error: function() {
+                $('#sending').hide();
+                $('#error').fadeIn('slow');
+            }
+
+        });
+
+        return false;
+    });
+
+
+</script>
