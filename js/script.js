@@ -10,6 +10,51 @@ jQuery(window).load(function() {
 
 $(document).ready(function(){
 
+//------------------------------------- View Router -------------------------------------------------//
+
+    var currentLink;
+    var swap = function(link) {
+        if (currentLink === link) {
+            return;
+        }
+        currentLink = link;
+        $("html, body").animate({ scrollTop: 0 });
+        $("#content-div").fadeOut(350, function() {
+            $("#content-div").empty().load(link).fadeIn(800);
+        });
+    };
+
+    var about = function () { swap('/about.html') };
+    var projects = function () { swap('/projects.html'); };
+    var blog = function () { swap('/blog.html') };
+    var contact = function () { swap('/contact.html'); };
+
+    var project = function(params) { swap('/projects/' + params.id + '.html'); };
+
+    var routes = {
+        'about': {callback: about, matcher: routeMatcher('about')},
+        'projects': {callback: projects, matcher: routeMatcher('projects')},
+        'blog': {callback: blog, matcher: routeMatcher('blog')},
+        'contact': {callback: contact, matcher: routeMatcher('contact')},
+        'projects/:id': {callback: project, matcher: routeMatcher('projects/:id')}
+    };
+
+    $(document).on("click", "a.director-link", function(evt) {
+        evt.preventDefault();
+        evt.stopPropagation();
+        var href = $(this).attr("href");
+
+        for (var route in routes) {
+            var params = routes[route].matcher.parse(href);
+            if (params != null) {
+                routes[route].callback(params);
+                return;
+            }
+        }
+    });
+    routes['about'].callback();
+
+
 
 //------------------------------------- Site slider ------------------------------------------------//
 

@@ -12,7 +12,7 @@
 
     <!-- Metas -->
     <meta charset="utf-8">
-    <title>SPLIT - PERSONAL VCARD HTML TEMPLATE</title>
+    <title>Fayez Lahoud</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="pragma" content="no-cache" />
@@ -138,65 +138,7 @@
 <script src="js/modernizr.js" type="text/javascript"></script>
 <script src="js/placeholders.min.js" type="text/javascript"></script>
 
-<script>
-    $(document).ready(function () {
-
-        var currentLink;
-        var swap = function(link) {
-            if (currentLink === link) {
-                return;
-            }
-            currentLink = link;
-            $("html, body").animate({ scrollTop: 0 });
-            $("#content-div").fadeOut(350, function() {
-                $("#content-div").empty().load(link).fadeIn(800);
-            });
-        };
-
-        var about = function () { swap('/about.html') };
-        var projects = function () { swap('/projects.html'); };
-        var blog = function () { swap('/blog.html') };
-        var contact = function () { swap('/contact.html'); };
-
-        var project = function(params) { swap('/projects/' + params.id + '.html'); };
-
-        var routes = {
-            'about': about,
-            'projects': projects,
-            'blog': blog,
-            'contact': contact,
-            'projects/:id': project
-        };
-        var matchers = {};
-        for (var route in routes) {
-            matchers[route] = routeMatcher(route);
-        }
-
-        $(document).on("click", "a.director-link", function(evt) {
-            evt.preventDefault();
-            evt.stopPropagation();
-            var href = $(this).attr("href");
-
-            for (var route in matchers) {
-                var params = matchers[route].parse(href);
-                if (params != null) {
-                    routes[route](params);
-                    return;
-                }
-            }
-        });
-        routes['about']();
-
-    });
-</script>
-
 <script src="js/script.js" type="text/javascript"></script>
-
-<!-- Google analytics -->
-
-
-<!-- End google analytics -->
-
 
 </body>
 </html>
