@@ -146,31 +146,20 @@ title: About
                             <!--Experience holder-->
                             <div class="exp-holder margTop">
 
-                                <!--Experience-->
-                                <div class="exp">
-                                    <div class="hgroup">
-                                        <h4>B.E., Computer and Communication Engineering - American
-                                            University of Beirut</h4>
-                                        <h6><i class="icon-calendar"></i>Sep 2009 - Jul 2013</h6>
-                                    </div>
-                                    <ul>
-                                        <li>Minor in Mathematics</li>
-                                        <li>7 times on the Dean's Honor List</li>
-                                        <li><b>Final Year Project</b> Automated Car Pooling System</li>
-                                    </ul>
-                                </div>
-                                <!--End experience-->
+                              {% for education in site.educations %}
+                              <div class="exp">
+                                  <div class="hgroup">
+                                      <h4>{{education.degree}} - {{education.university}}</h4>
+                                      <h6><i class="icon-calendar"></i>{{education.period}}</h6>
+                                  </div>
 
-                                <!--Experience-->
-                                <div class="exp">
-                                    <div class="hgroup">
-                                        <h4>M.S., Computer Science - École Polytechnique Fédérale de
-                                            Lausanne</h4>
-                                        <h6><i class="icon-calendar"></i>Sep 2015 - <span
-                                                class="current">Present</span></h6>
-                                    </div>
-                                </div>
-                                <!--End experience-->
+                                  <ul>
+                                    {% for mention in education.mentions %}
+                                      <li>{{mention.mention}}</li>
+                                    {% endfor %}
+                                  </ul>
+                              </div>
+                              {% endfor %}
                             </div> <!--End experience holder-->
                         </div>
                     </div>
@@ -213,42 +202,21 @@ title: About
                             <!--Experience holder-->
                             <div class="exp-holder margTop">
 
-                                <!--Experience-->
-                                <div class="exp">
-                                    <div class="hgroup">
-                                        <h4>Software Developer – Murex Systems </h4>
-                                        <h6><i class="icon-calendar"></i>Jul 2012 - Sep 2015</span></h6>
-                                    </div>
-                                    <ul>
-                                        <li>Java Swing manipulation API for test developers</li>
-                                        <li>Web templates for test reports and automated tools</li>
-                                        <li>Java-JavaScript bindings API in JavaFx Web Engine</li>
-                                    </ul>
-                                    <p>Technologies: <strong>JavaFx, Groovy, Maven, JavaScript,
-                                        AngularJS, Ruby, Rails</strong></p>
-                                </div>
-                                <!--End experience-->
+                              {% for experience in site.experiences %}
+                              <div class="exp">
+                                  <div class="hgroup">
+                                      <h4>{{experience.position}} - {{experience.company}}</h4>
+                                      <h6><i class="icon-calendar"></i>{{experience.period}}</h6>
+                                  </div>
 
-                                <!--Experience-->
-                                <div class="exp">
-                                    <div class="hgroup">
-                                        <h4>Software Developer Intern – Vidinoti SA</h4>
-                                        <h6><i class="icon-calendar"></i>Jun 2016 - Sep 2016</h6>
-                                    </div>
-                                    <ul>
-                                        <li>Browser-based augmented reality library for mobile
-                                            browsers
-                                        </li>
-                                        <li>Image recognition and tracking using AGAST corner detection
-                                            and BRIEF descriptors
-                                        </li>
-                                        <li>NPM module for easy calculation of BRIEF descriptors</li>
-                                    </ul>
-                                    <p>Technologies: <strong>JavaScript, RequireJS, NPM, Gulp, Python,
-                                        Image processing</strong></p>
-                                </div>
-                                <!--End experience-->
-
+                                  <ul>
+                                    {% for work in experience.works %}
+                                      <li>{{work.work}}</li>
+                                    {% endfor %}
+                                  </ul>
+                                  <p>Technologies: <strong>{{experience.technologies}}</strong></p>
+                              </div>
+                              {% endfor %}
                             </div>
                             <!--End experience holder-->
                         </div>
@@ -292,38 +260,25 @@ title: About
                     <!--Row-->
                     <div class="row ">
                         <div class="col-md-12">
-                            <!--Experience holder-->
+                            <!--Publications holder-->
                             <div class="exp-holder margTop">
-                                <!--Experience-->
+
+                                {% for publication in site.publications %}
+                                <!--Publication-->
                                 <div class="exp contact-info">
                                     <p>
                                         <strong>
-                                            <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6728586">
-                                                An intelligent carpooling app for a green social solution to
-                                                traffic and parking congestions.
+                                            <a href="{{publication.link}}">
+                                                {{publication.title}}
                                             </a>
                                         </strong>
                                         <br/>
-                                        16th IEEE Intelligent Transportation Systems, 2013
+                                        {{publication.conference}}
                                     </p>
                                 </div>
-
-                                <div class="exp contact-info">
-                                    <p>
-                                        <strong>
-                                            <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6820528">
-                                                An intelligent and fair GA carpooling scheduler as a social
-                                                solution for greener transportation.
-                                            </a>
-                                        </strong>
-                                        <br/>
-                                        17th IEEE Mediterranean Electrotechnical Conference, 2014
-                                    </p>
-                                </div>
-                                <!--End experience-->
-
+                                {% endfor %}
                             </div>
-                            <!--End experience holder-->
+                            <!--End publications holder-->
                         </div>
 
 
