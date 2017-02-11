@@ -1,0 +1,17 @@
+- position: Software Developer
+  company: Murex Systems
+  period: Jul 2012 - Sep 2015
+  works:
+    - work: Java Swing manipulation API for test developers
+    - work: Web templates for test reports and automated tools
+    - work: Java-JavaScript bindings API in JavaFx Web Engine
+  technologies: JavaFx, Groovy, Maven, JavaScript, AngularJS, Ruby, Rails
+
+- position: Software Developer Intern
+  company: Vidinoti SA
+  period: Jun 2016 - Sep 2016
+  works:
+    - work: Browser-based augmented reality library for mobile browsers
+    - work: Image recognition and tracking using AGAST corner detection and BRIEF descriptors
+    - work: NPM module for easy calculation of BRIEF descriptors
+  technologies: JavaScript, RequireJS, NPM, Gulp, Python, Image processing

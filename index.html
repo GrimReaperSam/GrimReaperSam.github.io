@@ -146,7 +146,7 @@ title: About
                             <!--Experience holder-->
                             <div class="exp-holder margTop">
 
-                              {% for education in site.educations %}
+                              {% for education in site.data.educations %}
                               <div class="exp">
                                   <div class="hgroup">
                                       <h4>{{education.degree}} - {{education.university}}</h4>
@@ -202,7 +202,7 @@ title: About
                             <!--Experience holder-->
                             <div class="exp-holder margTop">
 
-                              {% for experience in site.experiences %}
+                              {% for experience in site.data.experiences %}
                               <div class="exp">
                                   <div class="hgroup">
                                       <h4>{{experience.position}} - {{experience.company}}</h4>
@@ -263,7 +263,7 @@ title: About
                             <!--Publications holder-->
                             <div class="exp-holder margTop">
 
-                                {% for publication in site.publications %}
+                                {% for publication in site.data.publications %}
                                 <!--Publication-->
                                 <div class="exp contact-info">
                                     <p>
