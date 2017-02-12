@@ -8,37 +8,21 @@ title: Projects
 
     <!--Portfolio -->
     <div class="portfolio">
-
         <!--Main title-->
-
         <div class="main-title">
             <h1>my works</h1>
-            <div class="divider">
-                <div class="zigzag large clearfix " data-svg-drawing="yes">
-                    <svg  xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns="http://www.w3.org/2000/svg" version="1.1">
-			<path d="M1.357,12.26 10.807,2.81 20.328,12.332
-				29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 "  style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"/>
-			</svg>
-                </div>
-            </div>
+            {% include zigzag-divider.html %}
         </div>
-
         <!--End main title-->
-
 
         <!--Content-->
         <div class="content">
-
             <!--Block content-->
             <div class="block-content ">
-
                 <!--Works-->
                 <div class="works">
-
-
                     <!--Row-->
                     <div class="row">
-
                         <div class="block-filter tCenter">
                             <ul id="category" class="filter">
                                 <li><a data-filter="all" href="#" class="active">all</a></li>
@@ -49,40 +33,31 @@ title: Projects
 
                     <!--Row-->
                     <div class="row">
-
                         <div class="divider-m tCenter margTSSmall margBSmall clearfix">
                             <div class="col-md-12">
-                                <div class="zigzag medium clearfix " data-svg-drawing="yes">
-                                    <svg  xml:space="preserve" viewBox="0 0 69.172 14.975" width="45" height="5" y="0px" x="0px" xmlns="http://www.w3.org/2000/svg" version="1.1">
-	<path d="M1.357,12.26 10.807,2.81 20.328,12.332
-		29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 "  style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"/>
-                                </div>
+                                {% include zigzag.html size='medium' %}
                             </div>
                         </div>
                     </div>
                     <!--End row-->
 
-
                     <!--Row-->
                     <div class="row">
-
                         <ul class="work">
-
                             {% for item in site.projects %}
-
                             <li class="col-md-4 ">
                                 <!--Item-->
                                 <div class="item">
                                     <a class="box" href="{{item.url}}">
                                         <div class="desc">
                                             <h3 class="proj-desc">{{item.project_name}}
-                                                <span class="zigzag work clearfix "
+                                                <div class="zigzag work clearfix"
                                                       data-svg-drawing="yes">
 	<svg  xml:space="preserve" viewBox="0 0 69.172 14.975" width="25" height="10" y="0px" x="0px" xmlns="http://www.w3.org/2000/svg" version="1.1">
 	<path d="M1.357,12.26 10.807,2.81 20.328,12.332
 		29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 "  style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"/>
 	</svg>
-</span>
+</div>
                                                 <span>{{item.category}}</span></h3>
                                         </div>
 
@@ -96,7 +71,6 @@ title: Projects
                             {% endfor %}
 
                             <li class="col-md-4">
-
                                 <!--Item-->
                                 <div class="item web">
                                     <a class="box" href="img/portfolio/2.jpg">
@@ -115,12 +89,10 @@ title: Projects
                                     </a>
                                 </div>
                                 <!--End item-->
-
                             </li>
 
 
                             <li class="col-md-4">
-
                                 <!--Item-->
                                 <div class="item graphic">
                                     <a class="box" href="img/portfolio/3.jpg">
@@ -135,24 +107,15 @@ title: Projects
 </span>
                                                 <span>graphic design</span></h3>
                                         </div>
-
                                         <img alt="" src="img/portfolio/3.jpg">
-
                                     </a>
-
                                 </div>
                                 <!--End item-->
-
                             </li>
-
-
-
                         </ul>
 
                     </div>
                     <!--End row-->
-
-
                 </div>
                 <!--End works-->
 
@@ -160,8 +123,6 @@ title: Projects
 
             </div>
             <!--End block content-->
-
-
         </div>
         <!--End content-->
 
