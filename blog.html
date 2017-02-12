@@ -31,6 +31,15 @@ title: Blog
 							<!--Block post-->
 							<div class="block-post">
 								<div class="col-md-12">
+									<div class="post-title">
+									  <a href="{{post.url}}">
+									    <h1>{{post.title}}</h1>
+									  </a>
+									  <span class="meta-date">{{post.date | date_to_string}}</span>
+									</div>
+
+									<hr/>
+
 									{{ post.excerpt }}
 									<a href="{{post.url}}" class="but brd">Read More</a>
 

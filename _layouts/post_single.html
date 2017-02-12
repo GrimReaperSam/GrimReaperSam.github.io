@@ -11,7 +11,7 @@ layout: default
 
     <div class="main-title">
       <h1>The Blog</h1>
-      {% include zigzag-divider.html %}  
+      {% include zigzag-divider.html %}
     </div>
     <!--End main title-->
 
@@ -25,6 +25,15 @@ layout: default
           <div class="row">
             <!--Blog posts-->
             <div class="block-posts clearfix">
+              <div class="post-title">
+                <a href="{{page.url}}">
+                  <h1>{{page.title}}</h1>
+                </a>
+                <span class="meta-date">{{page.date | date_to_string}}</span>
+              </div>
+
+              <hr/>
+
               {{content}}
             </div>
           </div>
