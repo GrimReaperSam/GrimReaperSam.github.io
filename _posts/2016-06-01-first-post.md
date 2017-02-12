@@ -5,6 +5,7 @@ excerpt_separator: <!--more-->
 tags:
   - html
   - jekyll
+published: false
 ---
 <div class="post-media margBSmall" markdown="1">
 ![](img/blog/1.jpg)

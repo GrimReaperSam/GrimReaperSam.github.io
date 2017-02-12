@@ -27,35 +27,45 @@ title: Blog
 
 						<!--Blog posts-->
 						<div class="block-posts ">
-							{% for post in site.posts %}
-							<!--Block post-->
+							{% if site.posts.size > 0 %}
+								{% for post in site.posts %}
+								<!--Block post-->
+								<div class="block-post">
+									<div class="col-md-12">
+										<div class="post-title">
+										  <a href="{{post.url}}">
+										    <h1>{{post.title}}</h1>
+										  </a>
+										  <span class="meta-date">{{post.date | date_to_string}}</span>
+										</div>
+
+										<hr/>
+
+										{{ post.excerpt }}
+										<a href="{{post.url}}" class="but brd">Read More</a>
+
+										<!--Divider-->
+										<div class="clearfix"></div>
+										<div class="divider-m tCenter margTSmall margBottom clearfix">
+											<div class="col-md-12">
+												{% include zigzag.html size='medium' %}
+											</div>
+										</div>
+										<!-- End divider -->
+
+									</div>
+								</div>
+								<!--End block post-->
+								{% endfor %}
+							{% else %}
 							<div class="block-post">
 								<div class="col-md-12">
 									<div class="post-title">
-									  <a href="{{post.url}}">
-									    <h1>{{post.title}}</h1>
-									  </a>
-									  <span class="meta-date">{{post.date | date_to_string}}</span>
+										<h1>There's nothing here yet, coming soon...</h1>
 									</div>
-
-									<hr/>
-
-									{{ post.excerpt }}
-									<a href="{{post.url}}" class="but brd">Read More</a>
-
-									<!--Divider-->
-									<div class="clearfix"></div>
-									<div class="divider-m tCenter margTSmall margBottom clearfix">
-										<div class="col-md-12">
-											{% include zigzag.html size='medium' %}
-										</div>
-									</div>
-									<!-- End divider -->
-
 								</div>
 							</div>
-							<!--End block post-->
-							{% endfor %}
+							{% endif %}
 							</div>
 							<!--End blog posts-->
 
