@@ -1,9 +1,8 @@
 ---
 layout: project_single
-image_path: /img/portfolio/piano-teacher.jpeg
+image_path: img/portfolio/piano-teacher.jpeg
 category: Freelance
 project_name: Piano Teacher
-project_link: /projects/piano-teacher.html
 ---
 <div class="block-nav-work margBottom" markdown="1">
   * [<i class="icon-left-open-mini"></i>](#)
@@ -42,7 +41,7 @@ user wants to practise a single hand accompany the melody of the other hand.
 <div class="block-single margBottom clearfix">
   <div class="col-md-10 col-md-offset-1">
       <video controls>
-          <source src="img/piano.mp4" type="video/mp4">
+          <source src="{{base}}/img/piano.mp4" type="video/mp4">
       </video>
   </div>
 </div>
