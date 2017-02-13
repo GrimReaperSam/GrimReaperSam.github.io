@@ -1,3 +1,26 @@
+gems: ['jekyll/scholar']
+
 collections:
   projects:
     output: true
+
+scholar:
+  style: apa
+  locale: en
+
+  sort_by: year,month
+  order: descending
+  bibliography_list_tag: ul
+
+  source: _bibliography
+  repository: pdf
+  bibliography: references
+  bibliography_template: bibtex
+
+  replace_strings: true
+
+  details_dir:    bibliography
+  details_layout: bibliography.html
+  details_link:   Details
+
+  query: "@*"

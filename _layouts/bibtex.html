@@ -1,0 +1,38 @@
+---
+---
+<div class="exp contact-info">
+  <p>
+    {{reference | replace_first: 'Lahoud, F.', '<b>Lahoud, F.</b>'}}
+
+    <div id="{{key}}-materials">
+      <ul class='publications-ul'>
+        {% if entry.abstract %}
+        <li><a data-toggle="collapse" href="#{{key}}-abstract">Abstract</a></li>
+        {% endif %}
+
+        <li><a data-toggle="collapse" href="#{{key}}-bibtex">BibTeX</a></li>
+
+        {% if link %}
+        <li><a href="{{link}}">Download</a></li>
+        {% endif %}
+
+        {% if entry.url %}
+        <li>URL: <a href="{{entry.url}}">{{entry.url}}</a></li>
+        {% endif %}
+
+        {% if entry.doi %}
+        <li>DOI:&nbsp;<a href="http://dx.doi.org/{{entry.doi}}">{{entry.doi}}</a></li>
+        {% endif %}
+      </ul>
+
+      {% if entry.abstract %}
+      <p id="{{key}}-abstract" class="collapse">{{entry.abstract}}</p>
+      {% endif %}
+
+      <div class="collapse" id="{{key}}-bibtex">
+        <pre>{{entry.bibtex}}</pre>
+      </div>
+
+    </div>
+  </p>
+</div>

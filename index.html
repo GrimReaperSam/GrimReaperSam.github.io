@@ -202,20 +202,7 @@ title: About
                         <div class="col-md-12">
                             <!--Publications holder-->
                             <div class="exp-holder margTop">
-                                {% for publication in site.data.publications %}
-                                <!--Publication-->
-                                <div class="exp contact-info">
-                                    <p>
-                                        <strong>
-                                            <a href="{{publication.link}}">
-                                                {{publication.title}}
-                                            </a>
-                                        </strong>
-                                        <br/>
-                                        {{publication.conference}}
-                                    </p>
-                                </div>
-                                {% endfor %}
+                                {% bibliography %}
                             </div>
                             <!--End publications holder-->
                         </div>
