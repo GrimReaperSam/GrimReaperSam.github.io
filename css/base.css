@@ -377,7 +377,7 @@ iframe{width:100%;frameborder:0;display:inline-block;}
 
 
 
-	.main-nav ul li a, .info ul.info-list li .inf, .exp .hgroup h4, .block.service .det h3, .block-quote .block-profile, .block-quote .block-profile span, .item a .desc h3, .address-info p, .search-form input[type="text"], .author a, .but  {
+	.main-nav ul li a, .info ul.info-list li .inf, .exp .hgroup h4, .block-quote .block-profile, .block-quote .block-profile span, .item a .desc h3, .address-info p, .search-form input[type="text"], .author a, .but  {
 		font-family: 'open_sansbold',Arial,sans-serif;
 	}
 
@@ -389,7 +389,7 @@ iframe{width:100%;frameborder:0;display:inline-block;}
 
 
 
-	.contact-info li, .contact-info b , .skills-list h4, .skill .title, .filter li, .comments .reply-btn a,strong, .skill .title
+	.contact-info li, .contact-info b , .filter li, .comments .reply-btn a,strong
 	{
 		font-family: 'open_sanssemibold',Arial,sans-serif;
 

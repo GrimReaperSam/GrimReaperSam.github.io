@@ -440,101 +440,6 @@
 
 }
 
-
-.skill .skills-list li:last-child .progress{
-	margin-bottom:0;
-}
-
-
-.skill.des .progress {
-	border:1px solid #efefef;
-}
-
-
-.skill.dev .progress {
-	border:1px solid #558e6a;
-}
-
-.skill.prs .progress {
-	border:1px solid #33373d;
-}
-
-
-.progress .percentage {
-	border-radius: 50px 0 0 50px;
-	-moz-border-radius:50px 0 0 50px;
-	-webkit-border-radius :50px 0 0 50px;
-	-ms-border-radius:50px 0 0 50px;
-	-o-border-radius: 50px 0 0 50px;
-    bottom: 0;
-    position: absolute;
-    top: 0;
-}
-
-
-.skill.des .progress .percentage {
-	background-color: #efefef;
-}
-
-
-.skill.dev .progress .percentage {
-	background-color: #558e6a;
-}
-
-
-.skill.prs .progress .percentage {
-	background-color: #33373d;
-}
-
-
-.percentage .percent {
- 	position: absolute;
-    right: -14px;
-    top: -30px;
-	font-size:11px;
-}
-
-
-
-.skills-list h4{
-	display:block;
-	text-transform:uppercase;
-	margin-bottom:0;
-	font-size:13px;
-	color:#666666;
-
-}
-
-
-.skill .title{
-
-	-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-    transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    left: -15px;
-    padding: 5px 25px;
-    position: absolute;
-    text-align: center;
-    text-transform: uppercase;
-    top: 0;
-}
-
-
-.skill .title.des{
-	border: 1px dashed #efefef;
-}
-
-.skill .title.dev{
-	border: 1px dashed #558e6a;
-}
-
-.skill .title.prs{
-	border: 1px dashed #33373d;
-}
-
-
-
-
 .timeline {
     position: relative;
 }
@@ -649,24 +554,6 @@
 	-o-border-radius: 6px;
 	padding:1px 12px;
 }
-
-
-.block.service .det h3{
-	font-size:13px;
-
-}
-
-
-.block.service .ico{
-	font-size:30px;
-	margin-bottom:10px;
-	color: #558e6a;
-}
-
-
-
-
-
 
 
 .block-quote {
@@ -1451,9 +1338,6 @@ span.meta-date{
 	.info ul.info-list li .inf{left:-4px;}
 	.info ul.info-list{margin-bottom:10px;}
 	.vc{display:inline !important;}
-	.skill .title{transform:rotate(0deg);-webkit-transform: rotate(0);position:static;margin-top:25px}
-	.block.service div{margin-bottom:30px;}
-	.block.service div:last-child{margin-bottom:0;}
 	#map{height:300px;}
 	.address-info i{margin-left:-45px;}
 	.address-info p{line-height:30px;margin-bottom:60px;}
@@ -1476,9 +1360,6 @@ span.meta-date{
 	.info ul.info-list{margin-bottom:10px;}
 	.info ul.info-list li .inf{left:-2px;}
 	.vc{display:inline !important;}
-	.skill .title{transform:rotate(0deg);-webkit-transform: rotate(0);position:static;margin-top:25px}
-	.block.service div{margin-bottom:30px;}
-	.block.service div:last-child{margin-bottom:0;}
 	.filter li{display:block; margin:10px 0;}
 	.post-meta li{float:none;}
 	.post-title h1, .post-title a{line-height:30px;display:block;}
@@ -1513,9 +1394,6 @@ span.meta-date{
 	.info ul.info-list li {border-bottom: 1px solid #efefef;border-left: 1px solid #efefef;}
 	.info ul.info-list li .inf{width:100%;border-right:0;border-left:1px solid #efefef;border-bottom:1px solid #efefef;}
 	.vc{display:inline !important;}
-	.skill .title{transform:rotate(0deg);-webkit-transform: rotate(0);position:static;margin-top:25px}
-	.block.service div{margin-bottom:30px;}
-	.block.service div:last-child{margin-bottom:0;}
 	.block-quote{width:100%;margin:0;padding:20px;}
 	.block-quote .block-img, .block-quote .block-icon{display:none;}
 	.filter li{display:block; margin:10px 0;}
