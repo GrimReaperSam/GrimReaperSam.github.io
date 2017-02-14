@@ -173,8 +173,16 @@
 
 
 
+.fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+}
 
-
+.fixed-nav-bar.main-nav.tabbed ul li{float:left;width:25%;border-right:1px solid #26292e;border-bottom:none;}
+.fixed-nav-bar.main-nav.tabbed ul li:last-child{border-right:none;border-bottom:none;}
 
 .main-nav ul li{
 	display:block;
