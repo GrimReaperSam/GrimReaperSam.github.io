@@ -152,7 +152,6 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33373d', endColorstr='#0033373d',GradientType=0 ); /* IE6-9 */
 }
 
-
 .img-profile .name-profile span{
 	color:#ffffff;
 	opacity:.95;
@@ -163,14 +162,10 @@
 	text-transform:uppercase;
 }
 
-
-
 .img-profile .name-profile span sup{
  	font-size: 8px;
     line-height: 5px;
 }
-
-
 
 
 .fixed-nav-bar {
