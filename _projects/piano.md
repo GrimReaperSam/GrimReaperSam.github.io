@@ -2,7 +2,7 @@
 layout: project_single
 image_path: img/portfolio/piano-teacher.jpeg
 category: Freelance
-project_name: Piano Teacher
+title: Piano Teacher
 ---
 <div class="block-nav-work margBottom" markdown="1">
   * [<i class="icon-left-open-mini"></i>](#)
