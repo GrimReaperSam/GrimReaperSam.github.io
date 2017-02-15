@@ -1,8 +1,9 @@
 ---
 layout: project_single
-image_path: img/projects/piano.jpg
-category: Freelance
-title: Piano Teacher
+image_path: img/projects/carpool.jpg
+category: University Project
+title: Carpooling Scheduler
+published: false
 ---
 The aim of this project was to create a piano teacher software/hardware that guides
 students using lights over the piano keys. I worked on the software part and created a server that handles

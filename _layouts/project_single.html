@@ -20,7 +20,31 @@ layout: default
         <div class="content">
             <!--Block content-->
             <div class="block-content">
-                {{content}}
+              <div class="block-nav-work margBottom">
+                <ul>
+                  {% if page.previous.url %}
+                    <li><a href="{{page.previous.url}}"><i class="icon-left-open-mini"></i></a></li>
+                  {% else %}
+                    <li><a style="visibility:hidden"><i class="icon-left-open-mini"></i></a></li>
+                  {% endif %}
+
+                  <li><a href="/projects.html"><i class="icon-cancel"></i></a></li>
+
+                  {% if page.next.url %}
+                    <li><a href="{{page.next.url}}"><i class="icon-right-open-mini"></i></a></li>
+                  {% else %}
+                    <li><a style="visibility:hidden"><i class="icon-right-open-mini"></i></a></li>
+                  {% endif %}
+                </ul>
+              </div>
+
+              <div class="block-single margBottom clearfix">
+                <div class="col-md-10 col-md-offset-1">
+                  <h1 class="large-title margBSSmall">{{page.title}}</h1>
+
+                  {{content}}
+                </div>
+              </div>
             </div>
             <!--End block content-->
         </div>
