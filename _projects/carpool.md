@@ -3,6 +3,11 @@ layout: project_single
 image_path: img/projects/carpool/carpool.jpg
 category: University Project
 title: Carpool Scheduler
+csss:
+  - slick
+  - slick-theme
+jss:
+  - slick.min
 ---
 
 * Job: **{{page.category}}**
