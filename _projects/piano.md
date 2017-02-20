@@ -1,6 +1,6 @@
 ---
 layout: project_single
-image_path: img/projects/piano.jpg
+image_path: img/projects/piano/piano.jpg
 category: Freelance
 title: Piano Teacher
 ---
@@ -23,5 +23,5 @@ and the green ones currently pressed key. The tempo can be adjusted, and hands/s
 user wants to practice a single hand accompany the melody of the other hand.
 
 <video controls>
-  <source src="{{base}}/img/piano.mp4" type="video/mp4">
+  <source src="{{base}}/img/projects/piano/piano.mp4" type="video/mp4">
 </video>

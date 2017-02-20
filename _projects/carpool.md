@@ -1,9 +1,8 @@
 ---
 layout: project_single
-image_path: img/projects/carpool.jpg
+image_path: img/projects/carpool/carpool.jpg
 category: University Project
 title: Carpool Scheduler
-published: false
 ---
 
 * Job: **{{page.category}}**
@@ -14,17 +13,59 @@ published: false
 
 This project aims to create a carpooling Android application with a server that automatically schedules the rides overnight. The project's goal is to group commuters sharing similar routes in order to reduce the usage of natural resources, decrease traffic and parking congestions, as well as vehicle emissions and pollution levels. This is also beneficial for the users themselves as it reduces their fuel and car maintenance costs.
 
-The result was a client-server application in which the client was a user friendly Android application that allows users to specify their schedules and view their respective rides and drivers after the scheduler has assigned the routes. The server consisted of a **Genetic Algorithm (GA)** that receives user requests and runs overnight, it makes use of Google Maps to calculate a fair and efficient route for all the users and sends back the results.
+The result was a client-server application in which the client was a user friendly Android application that allows users to specify their schedules and view their respective rides and drivers after the scheduler has assigned the routes. The server consisted of a **Genetic Algorithm (GA)** that receives user requests and runs overnight, it makes use of Google Maps to calculate a fair and efficient route for all the users and sends back the results. The calculation took into account the users origin and destination, as well as their departure and arrival time windows. It also accounted for fairness, which means rotating drivers over the week so that everybody gets to be a passenger sometime. The algorithm was similarly able to include user preferences such as smoking, age range, and preferred car capacity.
 
-A **Genetic Algorithm (GA)** is a method for solving optimization problems by selecting the best solutions. The selection is based on processes that mimic biological evolutions. The algorithm repeatedly evolves a population of solutions and preserves the best ones for the next generation. We used a modified version of GA in which the solution is the set of all the rides in the system, while each chromosome represented a single ride. The rides consisted of a driver and a set of users that met the capacity constraint of the driver's car and can be seen in the example chromosome below.
+The project was successful and resulted in two publications {% cite dakroub2013intelligent boukhater2014intelligent %}, as well as gaining the best poster award at the American University of Beirut FEA Student and Alumni Conference, year 2013.
 
-<div id="ride-example" class="margBSSmall"></div>
+Below are some images from the Android user application.
 
-Each solution is then represented by a set of chromosomes corresponding to all the rides of the system, and was evaluated according to the sum of its chromosomes' values. A system with 12 users could for example be solved using three cars with the riders dispersed like this.
+<div id="slick-carousel" class="margBSmall">
+  <div>
+    <img src="{{base}}/img/projects/carpool/Login.jpg" alt="Login" class="img-responsive center-block">
+    <div class="slick-caption">
+      <h2>Login</h2>
+    </div>
+  </div>
 
-<div id="solution-example" class="margBSSmall"></div>
+  <div>
+    <img src="{{base}}/img/projects/carpool/Registration.jpg" alt="Registration" class="img-responsive center-block">
+    <div class="slick-caption">
+      <h3>Registration</h3>
+    </div>
+  </div>
 
+  <div>
+    <img src="{{base}}/img/projects/carpool/Car Registration.jpg" alt="Car Registration" class="img-responsive center-block">
+    <div class="slick-caption">
+      <h3>Car Registration</h3>
+    </div>
+  </div>
 
+  <div>
+    <img src="{{base}}/img/projects/carpool/Preferences Registration.jpg" alt="Preferences Registration" class="img-responsive center-block">
+    <div class="slick-caption">
+      <h3>Preferences Registration</h3>
+    </div>
+  </div>
 
-<script src="{{base}}/js/chromosome.js" type="text/javascript"></script>
-<script>{% include js/carpool_project.js %}</script>
+  <div>
+    <img src="{{base}}/img/projects/carpool/Add Ride.jpg" alt="Add Ride" class="img-responsive center-block">
+    <div class="slick-caption">
+      <h3>Add Ride</h3>
+    </div>
+  </div>
+
+  <div>
+    <img src="{{base}}/img/projects/carpool/Ride List.jpg" alt="Ride List" class="img-responsive center-block">
+    <div class="slick-caption">
+      <h3>Ride List</h3>
+    </div>
+  </div>
+</div>
+
+**References**
+{% bibliography --cited %}
+
+<script>
+  $('#slick-carousel').slick();
+</script>
