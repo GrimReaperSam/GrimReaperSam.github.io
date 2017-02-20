@@ -776,9 +776,12 @@
 }
 
 .block-single ul{
-	font-size:13px;
+	font-size:100%;
 }
 
+.block-single p {
+  margin-bottom: 20px;
+}
 
 
 /*------------------------ End portfolio section ------------------------*/
