@@ -1279,6 +1279,21 @@ span.meta-date{
     padding-bottom: 25px;
 }
 
+.contact-info .publications-ul {
+  padding-bottom: 0;
+}
+
+.publications-div {
+  margin-bottom: 0;
+}
+
+.publications-div p {
+  margin-bottom: 0;
+}
+
+.block-single a {
+  color: #999999;
+}
 
 .contact-info li .ico {
     background:#33373d;
