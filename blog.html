@@ -29,6 +29,7 @@ title: Blog
 						<div class="block-posts ">
 							{% if site.posts.size > 0 %}
 								{% for post in site.posts %}
+								{% unless post.tags contains 'draft' %}
 								<!--Block post-->
 								<div class="block-post">
 									<div class="col-md-12">
@@ -56,6 +57,7 @@ title: Blog
 									</div>
 								</div>
 								<!--End block post-->
+								{% endunless %}
 								{% endfor %}
 							{% else %}
 							<div class="block-post">

@@ -848,7 +848,7 @@ span.meta-date{
 
 
 .block-post p{
-	margin-bottom:25px;
+	margin-bottom:10px;
 }
 
 
@@ -857,9 +857,8 @@ span.meta-date{
 }
 
 
-
 .block-post.single p{
-	margin-bottom:15px;
+	margin-bottom:10px;
 }
 
 
