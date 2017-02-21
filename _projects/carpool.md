@@ -8,6 +8,13 @@ csss:
   - slick-theme
 jss:
   - slick.min
+images:
+  - Login
+  - Registration
+  - Car Registration
+  - Preferences Registration
+  - Add Ride
+  - Ride List
 ---
 
 * Job: **{{page.category}}**
@@ -25,47 +32,14 @@ The project was successful and resulted in two publications {% cite dakroub2013i
 Below are some images from the Android user application.
 
 <div id="slick-carousel" class="margBSmall">
+  {% for image in page.images %}
   <div>
-    <img src="{{base}}/img/projects/carpool/Login.jpg" alt="Login" class="img-responsive center-block">
+    <img src="{{base}}/img/projects/carpool/{{image}}.jpg" alt="Login" class="img-responsive center-block">
     <div class="slick-caption">
-      <h2>Login</h2>
+      <h2>{{image}}</h2>
     </div>
   </div>
-
-  <div>
-    <img src="{{base}}/img/projects/carpool/Registration.jpg" alt="Registration" class="img-responsive center-block">
-    <div class="slick-caption">
-      <h3>Registration</h3>
-    </div>
-  </div>
-
-  <div>
-    <img src="{{base}}/img/projects/carpool/Car Registration.jpg" alt="Car Registration" class="img-responsive center-block">
-    <div class="slick-caption">
-      <h3>Car Registration</h3>
-    </div>
-  </div>
-
-  <div>
-    <img src="{{base}}/img/projects/carpool/Preferences Registration.jpg" alt="Preferences Registration" class="img-responsive center-block">
-    <div class="slick-caption">
-      <h3>Preferences Registration</h3>
-    </div>
-  </div>
-
-  <div>
-    <img src="{{base}}/img/projects/carpool/Add Ride.jpg" alt="Add Ride" class="img-responsive center-block">
-    <div class="slick-caption">
-      <h3>Add Ride</h3>
-    </div>
-  </div>
-
-  <div>
-    <img src="{{base}}/img/projects/carpool/Ride List.jpg" alt="Ride List" class="img-responsive center-block">
-    <div class="slick-caption">
-      <h3>Ride List</h3>
-    </div>
-  </div>
+  {% endfor %}
 </div>
 
 **References**

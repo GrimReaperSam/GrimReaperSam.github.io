@@ -20,6 +20,24 @@ layout: default
     <div class="content single">
       <!--Block content-->
       <div class="block-content ">
+        <div class="block-nav-work margBottom">
+          <ul>
+            {% if page.previous.url %}
+              <li><a href="{{page.previous.url}}"><i class="icon-left-open-mini"></i></a></li>
+            {% else %}
+              <li><a style="visibility:hidden"><i class="icon-left-open-mini"></i></a></li>
+            {% endif %}
+
+            <li><a href="/blog.html"><i class="icon-cancel"></i></a></li>
+
+            {% if page.next.url %}
+              <li><a href="{{page.next.url}}"><i class="icon-right-open-mini"></i></a></li>
+            {% else %}
+              <li><a style="visibility:hidden"><i class="icon-right-open-mini"></i></a></li>
+            {% endif %}
+          </ul>
+        </div>
+
         <!--Works-->
         <div class="blog">
           <!--Row-->
