@@ -4,7 +4,7 @@ $(document).ready(function() {
   // SETUP VARIABLES START //
   ///////////////////////////
   var word = "Hello World!";
-  var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ?!.,:;";
+  var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
   var fontFamily = "'open_sansbold',Arial,sans-serif";
   var nonMatchColor = "#85878b";
