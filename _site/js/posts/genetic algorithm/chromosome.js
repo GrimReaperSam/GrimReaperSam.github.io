@@ -27,15 +27,16 @@ function Chromosome(svg, size, dims) {
         .attr("text-anchor", "middle")
         .text(`Gene (${i})`);
     }.bind(this));
-    
-    this.rects = this.svg.selectAll("g rect");
-    this.texts = this.svg.selectAll("g text");
+
+    this.genes = this.svg.selectAll("g");
+    this.rects = this.genes.selectAll("rect");
+    this.texts = this.genes.selectAll("text");
 
     this.setText = function(value, index) {
       if (index == undefined) {
         this.texts.text(value);
       } else {
-        d3.select(this.texts._groups[0][index]).text(value);
+        d3.select(this.texts._groups[index][0]).text(value);
       }
     }
 
@@ -43,7 +44,7 @@ function Chromosome(svg, size, dims) {
       if (index === undefined) {
         object.attr(name, value);
       } else {
-        d3.select(object._groups[0][index]).attr(name, value);
+        d3.select(object._groups[index][0]).attr(name, value);
       }
     }
 

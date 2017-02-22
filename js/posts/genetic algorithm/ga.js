@@ -116,7 +116,6 @@ $(document).ready(function() {
     .attr("x2", (width + 1) * crossoverPoint)
     .attr("y2", distance + height * 2);
 
-  debugger
   var firstChild = function() {
     _.each(_.range(crossoverPoint), function(i) {
       dadChr.getGene(i)
