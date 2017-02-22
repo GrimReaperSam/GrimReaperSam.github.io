@@ -81,7 +81,7 @@ $(document).ready(function() {
   var matchingFiveChr = new Chromosome(svg, word.length, dims);
   setText(matchingFiveChr, matchSix);
 
-  $('#matching-five-fitness').html(fitness(word, matchSix));
+  $('#matching-five-fitness').text(fitness(word, matchSix));
   $('#worle-fitness').text(fitness(word, "Hello Worle!"));
   $('#worly-fitness').text(fitness(word, "Hello Worly!"));
   ////////////////////////////
