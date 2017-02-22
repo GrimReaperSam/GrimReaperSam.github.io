@@ -50,6 +50,14 @@ $(document).ready(function() {
       }
     })
   }
+
+  var endAll = function(transition, callback) {
+  var n = 0;
+  transition.each(function() { ++n; })
+    .on('end', function() {
+      if (!--n) callback.apply(this, arguments);
+    });
+  }
   /////////////////////////
   // SETUP VARIABLES END //
   /////////////////////////
@@ -117,21 +125,16 @@ $(document).ready(function() {
     .attr("y2", distance + height * 2);
 
   var firstChild = function() {
-    _.each(_.range(crossoverPoint), function(i) {
-      dadChr.getGene(i)
+    dadChr.genes.filter(function(d, i) { return i < crossoverPoint})
         .transition()
         .duration(2000)
         .ease(d3.easeLinear)
         .attr("transform", `translate(0, ${(height + distance) * 2 + distance})`)
-        .on("end", function() {
-          momChr.getGene(i)
-            .transition()
-            .duration(2000)
-            .ease(d3.easeLinear)
-            .attr("transform", `translate(0, ${height + distance * 2})`);
+        .call(endAll, function() {
+          console.log("ha");
         });
-    });
   }
+  firstChild();
   // firstChild();
   var secondChild = function() {
     _.each(_.range(crossoverPoint, word.length), function(i) {

@@ -34,26 +34,30 @@ function Chromosome(svg, size, dims) {
 
     this.setText = function(value, index) {
       if (index == undefined) {
-        this.texts.text(value);
+        this.genes.selectAll("text").text(value);
       } else {
-        d3.select(this.texts._groups[index][0]).text(value);
+        this.getGene(index).select("text").text(value);
       }
     }
 
     this.attr = function(name, value, object, index) {
       if (index === undefined) {
-        object.attr(name, value);
+        this.genes.selectAll(object).attr(name, value);
       } else {
-        d3.select(object._groups[index][0]).attr(name, value);
+        this.getGene(index).select(object).attr(name, value);
       }
     }
 
     this.textattr = function(name, value, index) {
-        this.attr(name, value, this.texts, index);
+        this.attr(name, value, "text", index);
     }
 
     this.rectattr = function(name, value, index) {
-      this.attr(name, value, this.rects, index);
+      this.attr(name, value, "rect", index);
+    }
+
+    this.getGene = function(index) {
+      return this.genes.filter(function(d, i) {return i === index});
     }
 
 }
