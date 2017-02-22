@@ -154,7 +154,7 @@
 
 <p>A genetic algorithm (GA) aims at solving optimization problems based on a natural selection process that behaves similarly to biological evolution. The algorithm repeatedly alters a population of individual solutions and randomly selects individuals from the current generation to produce the children for the next generation. This random process leads to the solution after multiple “evolution” rounds.</p>
 
-<p>Natural selection is a survival process that describes how organisms that are better adapted to their environment tend to survive and produce more offspring than the other organisms. In the following sections, each biological aspect of natural selection will be taken apart and used to explain its equivalent in a GA. The explanation will also follow an example where we the GA will try to find the famous “Hello World!” text.</p>
+<p>Natural selection is a survival process that describes how organisms that are better adapted to their environment tend to survive and produce more offspring than the other organisms. Each section will explain how each biological aspect of natural selection is mirrored in a genetic algorithm. The explanation will also follow an example where the GA will try to find the famous “Hello World!” text.</p>
 
 <!--more-->
 
@@ -174,7 +174,7 @@
 
 <script type="math/tex; mode=display">\mathscr{F}_c = 1_{c==g} + \frac{(127 - d_{c,g})}{127}</script>
 
-<p>where <script type="math/tex">c</script> is the chromosome character, <script type="math/tex">o</script> is the corresponding goal character and <script type="math/tex">d_{c, g}</script> the distance between them.</p>
+<p>where <script type="math/tex">c</script> is the chromosome character, <script type="math/tex">g</script> is the corresponding goal character and <script type="math/tex">d_{c, g}</script> the distance between them.</p>
 
 <p>Applying this formula to the chromosome with five matches and summing over all characters, we get a fitness of <span id="matching-five-fitness"></span>. Similarly, “Hello Worle!” has a fitness of <span id="worle-fitness"></span>, while “Hello Worly!” fitness is <span id="worly-fitness"></span>, showing indicating which one is closer to the solution. The maximum possible fitness is 24.</p>
 
