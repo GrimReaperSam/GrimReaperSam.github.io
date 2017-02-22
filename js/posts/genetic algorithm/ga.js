@@ -103,16 +103,20 @@ $(document).ready(function() {
   var distance = 30;
   var svg = d3.select("#crossover-example").append("svg")
     .attr("viewBox", `0 0 ${(width + 1) * word.length} ${height * 4 + distance * 4}`);
-  var dad = "Halli Bored!";
+  var dad = "Happy Bored!";
   var mom = "Peibo Random";
 
   var dims = {"x": 0, "y": 0, "width": width, "height": height};
   var dadChr = new Chromosome(svg, word.length, dims)
   setText(dadChr, dad);
+  var firstChild = dadChr.clone();
+  setText(firstChild, dad);
 
   var dims = {"x": 0, "y": distance + height, "width": width, "height": height};
   var momChr = new Chromosome(svg, word.length, dims)
   setText(momChr, mom);
+  var secondChild = momChr.clone();
+  setText(secondChild, mom);
 
   // SINGLE POINT CROSSOVER //
   var crossoverPoint = Math.floor(Math.random() * (word.length - 4)) + 2
@@ -124,37 +128,57 @@ $(document).ready(function() {
     .attr("x2", (width + 1) * crossoverPoint)
     .attr("y2", distance + height * 2);
 
-  var firstChild = function() {
-    dadChr.genes.filter(function(d, i) { return i < crossoverPoint})
+  var firstChildCross = function() {
+    firstChild.genes.filter(function(d, i) { return i < crossoverPoint})
+        .attr("transform", "translate(0, 0)")
         .transition()
-        .duration(2000)
+        .duration(500)
         .ease(d3.easeLinear)
         .attr("transform", `translate(0, ${(height + distance) * 2 + distance})`)
         .call(endAll, function() {
-          console.log("ha");
-        });
-  }
-  firstChild();
-  // firstChild();
-  var secondChild = function() {
-    _.each(_.range(crossoverPoint, word.length), function(i) {
-      dadChr.getGene(i)
-        .transition()
-        .duration(2000)
-        .ease(d3.easeLinear)
-        .attr("transform", `translate(0, ${(height + distance) * 3 + distance})`)
-        .on("end", function() {
-          momChr.getGene(i)
+          secondChild.genes.filter(function(d, i) {return i >= crossoverPoint})
+            .attr("transform", "translate(0, 0)")
             .transition()
-            .duration(2000)
+            .duration(500)
             .ease(d3.easeLinear)
-            .attr("transform", `translate(0, ${(height + distance) * 2 + distance })`)
-            .on("end", function() {
-              secondChild();
+            .attr("transform", `translate(0, ${height + distance * 2})`)
+            .call(endAll, function() {
+              secondChildCross();
             });
         });
-    });
+  }
+  // firstChild();
+  var secondChildCross = function() {
+    firstChild.genes.filter(function(d, i) { return i >= crossoverPoint})
+      .attr("transform", "translate(0, 0)")
+      .transition()
+      .duration(500)
+      .ease(d3.easeLinear)
+      .attr("transform", `translate(0, ${(height + distance) * 3 + distance})`)
+      .call(endAll, function() {
+        secondChild.genes.filter(function(d, i) {return i < crossoverPoint})
+          .attr("transform", "translate(0, 0)")
+          .transition()
+          .duration(500)
+          .ease(d3.easeLinear)
+          .attr("transform", `translate(0, ${(height + distance) * 2 + distance})`);
+      });
   };
+
+  a = $('<a/>')
+    .append($('<i/>').addClass('icon-loop'))
+    .click(function() {
+      firstChild.genes.transition().duration(0);
+      firstChild.remove();
+      secondChild.genes.transition().duration(0);
+      secondChild.remove();
+      firstChild = dadChr.clone();
+      secondChild = momChr.clone();
+      setText(firstChild, dad);
+      setText(secondChild, mom);
+      firstChildCross();
+    });
+  $('<div/>').addClass('social').append(a).appendTo($('#crossover-example'));
 
   /////////////////////////////
   // CROSSOVER 5 EXAMPLE END //

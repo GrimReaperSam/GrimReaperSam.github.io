@@ -8,11 +8,12 @@ function Chromosome(svg, size, dims) {
     this.size = size;
     this.dims = dims;
 
-    this.svg = svg.append("g")
+    this.svg = svg;
+    this.group = this.svg.append("g")
               .attr("transform", `translate(${this.dims.x}, ${this.dims.y})`);
 
     this.size.times(function(i) {
-      var gene = this.svg.append("g");
+      var gene = this.group.append("g");
 
       gene.append("rect")
         .attr("x", (this.dims.width + 1) * i)
@@ -28,7 +29,7 @@ function Chromosome(svg, size, dims) {
         .text(`Gene (${i})`);
     }.bind(this));
 
-    this.genes = this.svg.selectAll("g");
+    this.genes = this.group.selectAll("g");
     this.rects = this.genes.selectAll("rect");
     this.texts = this.genes.selectAll("text");
 
@@ -58,6 +59,14 @@ function Chromosome(svg, size, dims) {
 
     this.getGene = function(index) {
       return this.genes.filter(function(d, i) {return i === index});
+    }
+
+    this.clone = function() {
+      return new Chromosome(this.svg, this.size, this.dims);
+    }
+
+    this.remove  = function() {
+      this.genes.remove();
     }
 
 }
