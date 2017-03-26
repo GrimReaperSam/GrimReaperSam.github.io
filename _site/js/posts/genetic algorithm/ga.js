@@ -119,14 +119,25 @@ $(document).ready(function() {
   setText(secondChild, mom);
 
   // SINGLE POINT CROSSOVER //
-  var crossoverPoint = Math.floor(Math.random() * (word.length - 4)) + 2
-  svg.append("line")
+  var crossoverPoint = Math.floor(Math.random() * (word.length - 6)) + 2
+  var crossoverLine = svg.append("line")
     .attr("stroke", splitColor)
     .attr("stroke-width", 2)
     .attr("x1", (width + 1) * crossoverPoint)
     .attr("y1", 0)
     .attr("x2", (width + 1) * crossoverPoint)
     .attr("y2", distance + height * 2);
+
+  var beginCrossover = function() {
+    crossoverLine.attr("transform", "translate(0, 0)")
+      .transition()
+      .duration(500)
+      .ease(d3.easeLinear)
+      .attr("transform", `translate(0, ${(height + distance) * 2 + distance})`)
+      .call(endAll, function() {
+          firstChildCross();
+      })
+  }
 
   var firstChildCross = function() {
     firstChild.genes.filter(function(d, i) { return i < crossoverPoint})
@@ -165,9 +176,12 @@ $(document).ready(function() {
       });
   };
 
-  a = $('<a/>')
-    .append($('<i/>').addClass('icon-loop'))
-    .click(function() {
+  // Run and restart buttons
+  social = $('<div/>').appendTo($('#crossover-example'));
+  button = $('<a/>').addClass('blog-button').appendTo(social);
+  icon = $('<i/>').addClass('icon-play').appendTo(button);
+
+  button.click(function() {
       firstChild.genes.transition().duration(0);
       firstChild.remove();
       secondChild.genes.transition().duration(0);
@@ -176,17 +190,15 @@ $(document).ready(function() {
       secondChild = momChr.clone();
       setText(firstChild, dad);
       setText(secondChild, mom);
-      firstChildCross();
+      beginCrossover();
     });
-  $('<div/>').addClass('social').append(a).appendTo($('#crossover-example'));
 
   /////////////////////////////
   // CROSSOVER 5 EXAMPLE END //
   /////////////////////////////
 });
 
-
-
+// javascript:$('.search-container').hide(); $('.playlist-container').hide(); $('.player-container').css('width', '100%');
 
 // var repeat = function() {
 //   chr.getGene(1)

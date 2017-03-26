@@ -5,7 +5,6 @@ excerpt_separator: <!--more-->
 tags:
   - genetic algorithm
   - artificial intelligence
-  - draft
 jss:
   - underscore-min
   - d3.v4.min
