@@ -31,10 +31,10 @@ $(document).ready(function() {
       if (word[i] == candidate[i]) {
           fitness += 1;
       }
-      fitness += (127 - Math.abs(word.charCodeAt(i) - candidate.charCodeAt(i))) / 127;
+      fitness += (127 - Math.abs(word.charCodeAt(i) - candidate.charCodeAt(i))) / 127.0;
     }
 
-    return Math.round(fitness * 100) / 100;
+    return Math.round(fitness * 100.0) / 100;
   }
 
   var setText = function(chromosome, text) {
@@ -89,9 +89,9 @@ $(document).ready(function() {
   var matchingFiveChr = new Chromosome(svg, word.length, dims);
   setText(matchingFiveChr, matchSix);
 
-  $('#matching-five-fitness').text(fitness(word, matchSix));
-  $('#worle-fitness').text(fitness(word, "Hello Worle!"));
-  $('#worly-fitness').text(fitness(word, "Hello Worly!"));
+  $('#matching-five-fitness').text(fitness(matchSix));
+  $('#worle-fitness').text(fitness("Hello Worle!"));
+  $('#worly-fitness').text(fitness("Hello Worly!"));
   ////////////////////////////
   // MATCHING 5 EXAMPLE END //
   ////////////////////////////
