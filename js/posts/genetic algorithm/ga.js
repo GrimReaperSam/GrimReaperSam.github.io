@@ -177,11 +177,14 @@ $(document).ready(function() {
   };
 
   // Run and restart buttons
-  social = $('<div/>').appendTo($('#crossover-example'));
-  button = $('<a/>').addClass('blog-button').appendTo(social);
-  icon = $('<i/>').addClass('icon-play').appendTo(button);
+  social = $('<div/>').addClass('social').css('text-align', 'center').appendTo($('#crossover-example'));
+  ul = $('<ul/>').appendTo(social);
+  li = $('<li/>').appendTo(ul);
+  button = $('<a/>').attr('href', '#').appendTo(li);
+  icon = $('<i/>').addClass('icon-loop').appendTo(button);
 
-  button.click(function() {
+  button.click(function(e) {
+      e.preventDefault();
       firstChild.genes.transition().duration(0);
       firstChild.remove();
       secondChild.genes.transition().duration(0);

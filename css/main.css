@@ -789,22 +789,6 @@
 
 
 /*------------------------ Blog section ------------------------*/
-.block-single a.blog-button {
-  border: 2px solid #33373d;
-  border-radius: 100%;
-  color: #33373d;
-  display: inline-block;
-  height: 35px;
-  width: 35px;
-  text-align: center;
-}
-
-.block-single a.blog-button i {
-  line-height: 32px;
-  font-size: 16px;
-}
-
-
 .post-title a, .post-title h1, span.meta-date{
 	display:inline-block;
 }
