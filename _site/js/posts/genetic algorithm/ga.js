@@ -3,42 +3,41 @@ $(document).ready(function() {
   ///////////////////////////
   // SETUP VARIABLES START //
   ///////////////////////////
-  var word = "Hello World!";
-  var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  const word = "Hello World!";
+  const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
-  var fontFamily = "'open_sansbold',Arial,sans-serif";
-  var nonMatchColor = "#85878b";
-  var matchColor = "#ffffff";
-  var nonMatchBgnd = "#33373d";
-  var matchBgnd = "#558e6a";
-  var splitColor = "#cd5353";
-  var width = 50;
-  var height = 20;
+  const fontFamily = "'open_sansbold',Arial,sans-serif";
+  const nonMatchColor = "#85878b";
+  const matchColor = "#ffffff";
+  const nonMatchBgnd = "#33373d";
+  const matchBgnd = "#558e6a";
+  const splitColor = "#cd5353";
+  const width = 50;
+  const height = 20;
 
-  var randomWord = function() {
-    var rdWord = '';
-    _(word.length).times(function(idx)  {
-      rdWord += charset.charAt(Math.floor(Math.random() * charset.length))
+  const randomWord = function() {
+    let randomWord = '';
+    _(word.length).times(function()  {
+      randomWord += charset.charAt(Math.floor(Math.random() * charset.length))
     });
-    return rdWord;
-  }
+    return randomWord;
+  };
 
-  var fitness = function(candidate) {
-    var fitness = 0;
+  const fitness = function(candidate) {
+    let fitness = 0;
 
-    var i;
-    for (i = 0;i < word.length; ++i) {
-      if (word[i] == candidate[i]) {
+    for (let i = 0;i < word.length; ++i) {
+      if (word[i] === candidate[i]) {
           fitness += 1;
       }
       fitness += (127 - Math.abs(word.charCodeAt(i) - candidate.charCodeAt(i))) / 127.0;
     }
 
     return Math.round(fitness * 100.0) / 100;
-  }
+  };
 
-  var setText = function(chromosome, text) {
-    chromosome.textattr("font-family", "'open_sansbold',Arial,sans-serif");
+  const setText = function(chromosome, text) {
+    chromosome.textattr("font-family", fontFamily);
     chromosome.textattr("fill", nonMatchColor);
     chromosome.rectattr("fill", nonMatchBgnd);
 
@@ -49,15 +48,16 @@ $(document).ready(function() {
         chromosome.rectattr("fill", matchBgnd, idx);
       }
     })
-  }
+  };
 
-  var endAll = function(transition, callback) {
-  var n = 0;
-  transition.each(function() { ++n; })
-    .on('end', function() {
-      if (!--n) callback.apply(this, arguments);
-    });
-  }
+  const endAll = function(transition, callback) {
+    let n = 0;
+    transition.each(function() { ++n; })
+      .on('end', function() {
+        if (!--n) callback.apply(this, arguments);
+      });
+  };
+
   /////////////////////////
   // SETUP VARIABLES END //
   /////////////////////////
@@ -65,28 +65,27 @@ $(document).ready(function() {
   //////////////////////////////
   // POPULATION EXAMPLE START //
   //////////////////////////////
-  var svg = d3.select("#population-example").append("svg")
+  let populationSvg = d3.select("#population-example").append("svg")
     .attr("viewBox", `0 0 ${(width + 1) * word.length} ${(height + 5) * 4}`);
 
   _(4).times(function(index) {
-    var dims = {"x": 0, "y": (height + 5) * index, "width": width, "height": height};
-    var populationChr = new Chromosome(svg, word.length, dims);
+    const dims = {"x": 0, "y": (height + 5) * index, "width": width, "height": height};
+    let populationChr = new Chromosome(populationSvg, word.length, dims);
     setText(populationChr, randomWord());
   });
   ////////////////////////////
   // POPULATION EXAMPLE END //
   ////////////////////////////
 
-
   //////////////////////////////
   // MATCHING 5 EXAMPLE START //
   //////////////////////////////
-  var svg = d3.select("#matching-five-example").append("svg")
+  let matchingFiveSvg = d3.select("#matching-five-example").append("svg")
     .attr("viewBox", `0 0 ${(width + 1) * word.length} ${height}`);
-  var matchSix = "H.plo!LoAndi";
+  const matchSix = "H.plo!LoAndi";
 
-  var dims = {"x": 0, "y": 0, "width": width, "height": height};
-  var matchingFiveChr = new Chromosome(svg, word.length, dims);
+  const matchingFiveDims = {"x": 0, "y": 0, "width": width, "height": height};
+  let matchingFiveChr = new Chromosome(matchingFiveSvg, word.length, matchingFiveDims);
   setText(matchingFiveChr, matchSix);
 
   $('#matching-five-fitness').text(fitness(matchSix));

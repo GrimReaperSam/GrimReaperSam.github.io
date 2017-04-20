@@ -15,3 +15,11 @@
     - work: Image recognition and tracking using AGAST corner detection and BRIEF descriptors
     - work: NPM module for easy calculation of BRIEF descriptors
   technologies: JavaScript, RequireJS, NPM, Gulp, Python, Image processing
+
+- position: Software Developer Intern
+  company: Sony Europe Limited
+  period: Feb 2017 - <span class="current">Present</span>
+  works:
+    - work: Audio speech recognition using VGG networks
+    - work: Distributed resource management using Grid Engine.
+  technologies: Python, Open Grid Engine, DNN
