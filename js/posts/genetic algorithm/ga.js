@@ -1,29 +1,29 @@
 $(document).ready(function() {
 
-  ///////////////////////////
-  // SETUP VARIABLES START //
-  ///////////////////////////
-  const word = "Hello World!";
-  const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    ///////////////////////////
+    // SETUP VARIABLES START //
+    ///////////////////////////
+    const word = "Hello World!";
+    const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
-  const fontFamily = "'open_sansbold',Arial,sans-serif";
-  const nonMatchColor = "#85878b";
-  const matchColor = "#ffffff";
-  const nonMatchBgnd = "#33373d";
-  const matchBgnd = "#558e6a";
-  const splitColor = "#cd5353";
-  const width = 50;
-  const height = 20;
+    const fontFamily = "'open_sansbold',Arial,sans-serif";
+    const nonMatchColor = "#85878b";
+    const matchColor = "#ffffff";
+    const nonMatchBgnd = "#33373d";
+    const matchBgnd = "#558e6a";
+    const splitColor = "#cd5353";
+    const width = 50;
+    const height = 20;
 
-  const randomWord = function() {
+    const randomWord = function() {
     let randomWord = '';
     _(word.length).times(function()  {
       randomWord += charset.charAt(Math.floor(Math.random() * charset.length))
     });
     return randomWord;
-  };
+    };
 
-  const fitness = function(candidate) {
+    const fitness = function(candidate) {
     let fitness = 0;
 
     for (let i = 0;i < word.length; ++i) {
@@ -34,9 +34,9 @@ $(document).ready(function() {
     }
 
     return Math.round(fitness * 100.0) / 100;
-  };
+    };
 
-  const setText = function(chromosome, text) {
+    const setText = function(chromosome, text) {
     chromosome.textattr("font-family", fontFamily);
     chromosome.textattr("fill", nonMatchColor);
     chromosome.rectattr("fill", nonMatchBgnd);
@@ -48,78 +48,78 @@ $(document).ready(function() {
         chromosome.rectattr("fill", matchBgnd, idx);
       }
     })
-  };
+    };
 
-  const endAll = function(transition, callback) {
+    const endAll = function(transition, callback) {
     let n = 0;
     transition.each(function() { ++n; })
       .on('end', function() {
         if (!--n) callback.apply(this, arguments);
       });
-  };
+    };
 
-  /////////////////////////
-  // SETUP VARIABLES END //
-  /////////////////////////
+    /////////////////////////
+    // SETUP VARIABLES END //
+    /////////////////////////
 
-  //////////////////////////////
-  // POPULATION EXAMPLE START //
-  //////////////////////////////
-  let populationSvg = d3.select("#population-example").append("svg")
+    //////////////////////////////
+    // POPULATION EXAMPLE START //
+    //////////////////////////////
+    let populationSvg = d3.select("#population-example").append("svg")
     .attr("viewBox", `0 0 ${(width + 1) * word.length} ${(height + 5) * 4}`);
 
-  _(4).times(function(index) {
+    _(4).times(function(index) {
     const dims = {"x": 0, "y": (height + 5) * index, "width": width, "height": height};
     let populationChr = new Chromosome(populationSvg, word.length, dims);
     setText(populationChr, randomWord());
-  });
-  ////////////////////////////
-  // POPULATION EXAMPLE END //
-  ////////////////////////////
+    });
+    ////////////////////////////
+    // POPULATION EXAMPLE END //
+    ////////////////////////////
 
-  //////////////////////////////
-  // MATCHING 5 EXAMPLE START //
-  //////////////////////////////
-  let matchingFiveSvg = d3.select("#matching-five-example").append("svg")
+    //////////////////////////////
+    // MATCHING 5 EXAMPLE START //
+    //////////////////////////////
+    let matchingFiveSvg = d3.select("#matching-five-example").append("svg")
     .attr("viewBox", `0 0 ${(width + 1) * word.length} ${height}`);
-  const matchSix = "H.plo!LoAndi";
+    const matchSix = "H.plo!LoAndi";
 
-  const matchingFiveDims = {"x": 0, "y": 0, "width": width, "height": height};
-  let matchingFiveChr = new Chromosome(matchingFiveSvg, word.length, matchingFiveDims);
-  setText(matchingFiveChr, matchSix);
+    const matchingFiveDims = {"x": 0, "y": 0, "width": width, "height": height};
+    let matchingFiveChr = new Chromosome(matchingFiveSvg, word.length, matchingFiveDims);
+    setText(matchingFiveChr, matchSix);
 
-  $('#matching-five-fitness').text(fitness(matchSix));
-  $('#worle-fitness').text(fitness("Hello Worle!"));
-  $('#worly-fitness').text(fitness("Hello Worly!"));
-  ////////////////////////////
-  // MATCHING 5 EXAMPLE END //
-  ////////////////////////////
+    $('#matching-five-fitness').text(fitness(matchSix));
+    $('#worle-fitness').text(fitness("Hello Worle!"));
+    $('#worly-fitness').text(fitness("Hello Worly!"));
+    ////////////////////////////
+    // MATCHING 5 EXAMPLE END //
+    ////////////////////////////
 
 
-  /////////////////////////////
-  // CROSSOVER EXAMPLE START //
-  /////////////////////////////
-  var distance = 30;
-  var svg = d3.select("#crossover-example").append("svg")
+    /////////////////////////////
+    // CROSSOVER EXAMPLE START //
+    /////////////////////////////
+    const distance = 30;
+    const crossoverSvg = d3.select("#crossover-example").append("svg")
     .attr("viewBox", `0 0 ${(width + 1) * word.length} ${height * 4 + distance * 4}`);
-  var dad = "Happy Bored!";
-  var mom = "Peibo Random";
+    const dad = "Happy Bored!";
+    const mom = "Peibo Random";
 
-  var dims = {"x": 0, "y": 0, "width": width, "height": height};
-  var dadChr = new Chromosome(svg, word.length, dims)
-  setText(dadChr, dad);
-  var firstChild = dadChr.clone();
-  setText(firstChild, dad);
+    const dadDims = {"x": 0, "y": 0, "width": width, "height": height};
+    const dadChr = new Chromosome(crossoverSvg, word.length, dadDims);
+    setText(dadChr, dad);
+    let firstChild = dadChr.clone();
+    setText(firstChild, dad);
 
-  var dims = {"x": 0, "y": distance + height, "width": width, "height": height};
-  var momChr = new Chromosome(svg, word.length, dims)
-  setText(momChr, mom);
-  var secondChild = momChr.clone();
-  setText(secondChild, mom);
+    const momDims = {"x": 0, "y": distance + height, "width": width, "height": height};
+    const momChr = new Chromosome(crossoverSvg, word.length, momDims);
+    setText(momChr, mom);
+    let secondChild = momChr.clone();
+    setText(secondChild, mom);
 
-  // SINGLE POINT CROSSOVER //
-  var crossoverPoint = Math.floor(Math.random() * (word.length - 6)) + 2
-  var crossoverLine = svg.append("line")
+    // SINGLE POINT CROSSOVER //
+    const crossoverPoint = Math.floor(Math.random() * (word.length - 6)) + 2;
+    const crossoverLine = crossoverSvg.append("line")
     .attr("stroke", splitColor)
     .attr("stroke-width", 2)
     .attr("x1", (width + 1) * crossoverPoint)
@@ -127,18 +127,22 @@ $(document).ready(function() {
     .attr("x2", (width + 1) * crossoverPoint)
     .attr("y2", distance + height * 2);
 
-  var beginCrossover = function() {
-    crossoverLine.attr("transform", "translate(0, 0)")
-      .transition()
-      .duration(500)
-      .ease(d3.easeLinear)
-      .attr("transform", `translate(0, ${(height + distance) * 2 + distance})`)
-      .call(endAll, function() {
-          firstChildCross();
-      })
-  }
+    const beginCrossover = function() {
+        firstChild = dadChr.clone();
+        secondChild = momChr.clone();
+        setText(firstChild, dad);
+        setText(secondChild, mom);
+        crossoverLine.attr("transform", "translate(0, 0)")
+          .transition()
+          .duration(500)
+          .ease(d3.easeLinear)
+          .attr("transform", `translate(0, ${(height + distance) * 2 + distance})`)
+          .call(endAll, function() {
+              firstChildCross();
+          })
+    };
 
-  var firstChildCross = function() {
+    const firstChildCross = function() {
     firstChild.genes.filter(function(d, i) { return i < crossoverPoint})
         .attr("transform", "translate(0, 0)")
         .transition()
@@ -156,9 +160,8 @@ $(document).ready(function() {
               secondChildCross();
             });
         });
-  }
-  // firstChild();
-  var secondChildCross = function() {
+    };
+    const secondChildCross = function() {
     firstChild.genes.filter(function(d, i) { return i >= crossoverPoint})
       .attr("transform", "translate(0, 0)")
       .transition()
@@ -173,48 +176,25 @@ $(document).ready(function() {
           .ease(d3.easeLinear)
           .attr("transform", `translate(0, ${(height + distance) * 2 + distance})`);
       });
-  };
+    };
 
-  // Run and restart buttons
-  social = $('<div/>').addClass('social').css('text-align', 'center').appendTo($('#crossover-example'));
-  ul = $('<ul/>').appendTo(social);
-  li = $('<li/>').appendTo(ul);
-  button = $('<a/>').attr('href', '#').appendTo(li);
-  icon = $('<i/>').addClass('icon-loop').appendTo(button);
+    // Run and restart buttons
+    const social = $('<div/>').addClass('social').css('text-align', 'center').appendTo($('#crossover-example'));
+    const ul = $('<ul/>').appendTo(social);
+    const li = $('<li/>').appendTo(ul);
+    const button = $('<a/>').attr('href', '#').appendTo(li);
+    const icon = $('<i/>').addClass('icon-loop').appendTo(button);
 
-  button.click(function(e) {
+    button.click(function(e) {
       e.preventDefault();
       firstChild.genes.transition().duration(0);
       firstChild.remove();
       secondChild.genes.transition().duration(0);
       secondChild.remove();
-      firstChild = dadChr.clone();
-      secondChild = momChr.clone();
-      setText(firstChild, dad);
-      setText(secondChild, mom);
       beginCrossover();
     });
-
-  /////////////////////////////
-  // CROSSOVER 5 EXAMPLE END //
-  /////////////////////////////
+    beginCrossover();
+    /////////////////////////////
+    // CROSSOVER 5 EXAMPLE END //
+    /////////////////////////////
 });
-
-// javascript:$('.search-container').hide(); $('.playlist-container').hide(); $('.player-container').css('width', '100%');
-
-// var repeat = function() {
-//   chr.getGene(1)
-//   .transition()
-//   .duration(2000)
-//   .ease(d3.easeLinear)
-//   .attr("transform", "translate(0, 50)")
-//   .on("end", function() {
-//     chr.getGene(1)
-//     .transition()
-//     .duration(2000)
-//     .ease(d3.easeLinear)
-//     .attr("transform", "translate(0, 0)")
-//     .on("end", repeat);
-//   });
-// }
-// repeat();
