@@ -22,4 +22,4 @@
   works:
     - work: Audio speech recognition using VGG networks
     - work: Distributed resource management using Grid Engine.
-  technologies: Python, Open Grid Engine, DNN
+  technologies: C/C++, Cython, Python, DNN, Open Grid Engine
