@@ -10,6 +10,7 @@ jss:
   - d3.v4.min
   - posts/genetic algorithm/chromosome
   - posts/genetic algorithm/ga
+published: false
 ---
 <div class="post-media margBSmall" markdown="1">
   <img class="img-responsive center-block" src="{{base}}/img/blog/genetic algorithm/main-image.jpg"/>
