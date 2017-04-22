@@ -101,7 +101,7 @@ $(document).ready(function() {
     /////////////////////////////
     const distance = 30;
     const crossoverSvg = d3.select("#crossover-example").append("svg")
-    .attr("viewBox", `0 0 ${(width + 1) * word.length} ${height * 4 + distance * 4}`);
+    .attr("viewBox", `0 0 ${(width + 1) * word.length} ${height * 4 + distance * 3}`);
     const dad = "Happy Bored!";
     const mom = "Peibo Random";
 
@@ -136,7 +136,7 @@ $(document).ready(function() {
           .transition()
           .duration(500)
           .ease(d3.easeLinear)
-          .attr("transform", `translate(0, ${(height + distance) * 2 + distance})`)
+          .attr("transform", `translate(0, ${(height + distance) * 2})`)
           .call(endAll, function() {
               firstChildCross();
           })
@@ -148,14 +148,14 @@ $(document).ready(function() {
         .transition()
         .duration(500)
         .ease(d3.easeLinear)
-        .attr("transform", `translate(0, ${(height + distance) * 2 + distance})`)
+        .attr("transform", `translate(0, ${(height + distance) * 2})`)
         .call(endAll, function() {
           secondChild.genes.filter(function(d, i) {return i >= crossoverPoint})
             .attr("transform", "translate(0, 0)")
             .transition()
             .duration(500)
             .ease(d3.easeLinear)
-            .attr("transform", `translate(0, ${height + distance * 2})`)
+            .attr("transform", `translate(0, ${height + distance})`)
             .call(endAll, function() {
               secondChildCross();
             });
@@ -167,19 +167,19 @@ $(document).ready(function() {
       .transition()
       .duration(500)
       .ease(d3.easeLinear)
-      .attr("transform", `translate(0, ${(height + distance) * 3 + distance})`)
+      .attr("transform", `translate(0, ${(height + distance) * 3})`)
       .call(endAll, function() {
         secondChild.genes.filter(function(d, i) {return i < crossoverPoint})
           .attr("transform", "translate(0, 0)")
           .transition()
           .duration(500)
           .ease(d3.easeLinear)
-          .attr("transform", `translate(0, ${(height + distance) * 2 + distance})`);
+          .attr("transform", `translate(0, ${(height + distance) * 2})`);
       });
     };
 
     // Run and restart buttons
-    const social = $('<div/>').addClass('social').css('text-align', 'center').appendTo($('#crossover-example'));
+    const social = $('<div/>').addClass('social margTSSSmall margBMSSSmall').css('text-align', 'center').appendTo($('#crossover-example'));
     const ul = $('<ul/>').appendTo(social);
     const li = $('<li/>').appendTo(ul);
     const button = $('<a/>').attr('href', '#').appendTo(li);
