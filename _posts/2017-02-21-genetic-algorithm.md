@@ -46,7 +46,7 @@ Applying this formula to the chromosome with five matches and summing over all c
 
 # **Evolving with Operators**
 
-Now we have a population of multiple chromosomes representing possible solutions, and are able to identify how close they are to the goal. We want to evolve this population by generating new offspring from the current chromosomes by simulating naturally occurring phenomenons. There are multiple operators that can be implemented, but let's focus on two simple ones here. First **[Crossover](https://en.wikipedia.org/wiki/Chromosomal_crossover)** is a process in which two similar chromosomes exchange genes and can be adapted to our case by exchanging letters between two candidate strings. The other operator is **[Mutation](https://en.wikipedia.org/wiki/Mutation)** and represents an alteration in some genes of a chromosome; for us it will be simply changing one of the characters randomly.
+Now we have a population of multiple chromosomes representing possible solutions, and are able to identify how close they are to the goal. We want to evolve this population by generating new offspring from the current chromosomes by simulating naturally occurring phenomenons. There are multiple operators that can be implemented, but let's focus on two simple ones here. First **Crossover** is a process in which two similar chromosomes exchange genes and can be adapted to our case by exchanging letters between two candidate strings. The other operator is **Mutation** and represents an alteration in some genes of a chromosome; for us it will be simply changing one of the characters randomly.
 
 **Crossover**
 

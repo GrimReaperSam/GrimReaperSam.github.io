@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+
+    
+
+
+
+
+    <!-- Metas -->
+    <meta charset="utf-8">
+    <title>Fayez Lahoud - Digitizing archived paintings</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <!-- Css -->
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/font.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../css/fontello.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../css/base.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/main.css" rel="stylesheet" type="text/css" media="all"/>
+    
+
+    <!--Javascript-->
+    <script src="../js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/modernizr.js" type="text/javascript"></script>
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        showMathMenu: false
+      });
+    </script>
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <script src="../js/script.js" type="text/javascript"></script>
+    
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../img/favicon.png">
+</head>
+<body>
+
+
+<!-- Preloader -->
+<div id="loader">
+    <!-- Preloader inner -->
+    <div id="loaderInner">
+        <div class="spinner"></div>
+    </div>
+    <!-- End preloader inner -->
+</div>
+<!-- End preloader-->
+
+<nav class="main-nav clearfix tabbed fixed-nav-bar">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul>
+          <li><a href="/index.html"><i class="icon-user"></i>About</a></li>
+          <li><a href="/projects.html"><i class="icon-briefcase"></i>Projects</a></li>
+          <li><a href="/blog.html"><i class="icon-chat"></i>Blog</a></li>
+          <li><a href="/contact.html"><i class="icon-phone"></i>Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!--Wrapper-->
+<div id="wrapper" class="margLTop  margLBottom">
+
+    <!--Container-->
+    <div class="container">
+        <div class="row ">
+            <div id="content-div" class="col-md-12">
+<!--Portfolio single-->
+<section id="portfolio" class="bgWhite ofsInBottom ">
+
+    <!--Portfolio -->
+    <div class="portfolio">
+
+        <!--Main title-->
+        <div class="main-title work-title">
+            <h1>Digitizing archived paintings</h1>
+            <div class="divider">
+
+<div class="zigzag large clearfix " data-svg-drawing="yes">
+  <svg  xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <path d="M1.357,12.26 10.807,2.81 20.328,12.332
+    29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 "  style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"/>
+  </svg>
+</div>
+
+
+</div>
+
+        </div>
+        <!--End main title-->
+
+
+        <!--Content-->
+        <div class="content">
+            <!--Block content-->
+            <div class="block-content">
+              <div class="block-nav-work margBottom">
+                <ul>
+                  
+                    <li><a href="/projects/carpool.html"><i class="icon-left-open-mini"></i></a></li>
+                  
+
+                  <li><a href="/projects.html"><i class="icon-cancel"></i></a></li>
+
+                  
+                    <li><a href="/projects/piano.html"><i class="icon-right-open-mini"></i></a></li>
+                  
+                </ul>
+              </div>
+
+              <div class="block-single margBottom clearfix">
+                <div class="col-md-10 col-md-offset-1">
+                  <h1 class="large-title margBottom">Digitizing archived paintings</h1>
+
+                  <ul>
+  <li>Job: <strong>University Project</strong></li>
+  <li>Date : <strong>Feb 2016 - May 2016</strong></li>
+  <li>Technologies: <strong>Python, Anaconda, OpenCV, Image Processing, Layout analysis, Optical Character Recognition</strong></li>
+</ul>
+
+<hr />
+
+<p>The <strong><a href="http://www.cini.it/en/foundation">Giorgio Cini Foundation</a></strong> is a non-profit cultural instituation located in Venice, Italy.
+It aims to create a cultural center in the Island of San Giorgio Maggiore. As part of this goal,
+I worked on a semester project at EPFL (<strong><a href="http://dhlab.epfl.ch">DHLAB</a></strong>) to automate the digitiation of a large dataset of painting photos.
+The scans, front and back shown below, need be processed and then associated with their paintings and textual description.
+The final pipeline takes as input the front and back scans, and returns the bounding boxes
+of the painting, the text area and the barcode. It also recognizes each text section individually as well
+as their textual information using OCR.</p>
+
+<p class="margBMSSSmall"><img src="/img/projects/cini/front.png" alt="Front" title="Front" /></p>
+<h1 class="text-center margBSmall" id="recto-scan"><strong>Recto scan</strong></h1>
+
+<p>Using different morphology operators, gradients, and OTSU thresholding completed by some dimension and position constraints, the painting and
+text boxes were identified and cropped from the image and re-aligned. The painting is identified as the largest cluster remaining after processing the image,
+while the text area is found by taking the lowest horizontal using Hough Transform line that’s above the painting box. The results from the previous image are shown below.</p>
+
+<p class="margBMSSSmall"><img src="/img/projects/cini/painting.png" alt="Painting" title="Painting" /></p>
+<h1 class="text-center margBSmall" id="painting"><strong>Painting</strong></h1>
+
+<p class="margBMSSSmall"><img src="/img/projects/cini/text-area.png" alt="Text Area" title="Text Area" /></p>
+<h1 class="text-center margBSmall" id="text-area"><strong>Text Area</strong></h1>
+
+<p>From there, the text area is taken and processed using a layout analysis tool: <strong><a href="https://github.com/mittagessen/kraken">Kraken</a></strong>. It tries to find the smallest
+bounding boxes in an image giving a result like this:</p>
+
+<p class="margBMSSSmall"><img src="/img/projects/cini/text-location.png" alt="Text Location" title="Text Location" /></p>
+<h1 class="text-center margBSmall" id="text-location"><strong>Text Location</strong></h1>
+
+<p>Text text area is also processed using Frangi Filters, which are able to find ridges in the image, allowing to find thing edges separating similar regions in it.
+The result is an image segmentation separating all the parts of the text area as follows:</p>
+
+<p class="margBMSSSmall"><img src="/img/projects/cini/layout-analysis.png" alt="Layout Analysis" title="Layout Analysis" /></p>
+<h1 class="text-center margBSmall" id="layout-analysis"><strong>Layout Analysis</strong></h1>
+
+<p>The results from both methods are merged together, and sorted vertically and horizontally in order to classify each area. For example the top-left most area
+is the City in which the painting can be found. The end result of the process is something like this:</p>
+
+<p class="margBMSSSmall"><img src="/img/projects/cini/text-classification.png" alt="Text Classification" title="Text Classification" /></p>
+<h1 class="text-center margBSmall" id="text-classification"><strong>Text Classification</strong></h1>
+
+<p>After that each identified section is cropped and parsed using <strong><a href="https://github.com/tesseract-ocr/tesseract">Tesseract OCR</a></strong>, and the results are stored in a json
+file as a set of keys and values for this image.</p>
+
+                </div>
+              </div>
+            </div>
+            <!--End block content-->
+        </div>
+        <!--End content-->
+
+    </div>
+    <!--End portfolio-->
+
+</section>
+<!--End portfolio single-->
+</div>
+
+        </div>
+        <!--End  row-->
+    </div>
+    <!--End  container-->
+</div>
+<!--End wrapper-->
+
+</body>
+</html>
