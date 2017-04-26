@@ -1268,6 +1268,7 @@ span.meta-date{
 }
 
 .contact-info .publications-ul li {
+  padding-bottom: 0;
   display: block;
 }
 
