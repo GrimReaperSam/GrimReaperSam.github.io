@@ -177,7 +177,14 @@ is the City in which the painting can be found. The end result of the process is
 <h1 class="text-center margBSmall" id="text-classification"><strong>Text Classification</strong></h1>
 
 <p>After that each identified section is cropped and parsed using <strong><a href="https://github.com/tesseract-ocr/tesseract">Tesseract OCR</a></strong>, and the results are stored in a json
-file as a set of keys and values for this image.</p>
+file as a set of keys and values for this image, giving a result similar to the below structure:</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"City"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="s2">"COLONIA"</span><span class="err">,</span><span class="w">
+</span><span class="s2">"Author"</span><span class="err">:</span><span class="w"> </span><span class="s2">"GIOVANNI FRANCESCO da RIMINI (attr.)"</span><span class="err">,</span><span class="w">
+</span><span class="s2">"Attribution"</span><span class="err">:</span><span class="w"> </span><span class="s2">"FONDO G. FIOCCO"</span><span class="err">,</span><span class="w">
+</span><span class="s2">"Museum"</span><span class="err">:</span><span class="w"> </span><span class="s2">"MUSEO DIOCESANO"</span><span class="err">,</span><span class="w"> </span><span class="err">...</span><span class="w">
+</span></code></pre>
+</div>
 
                 </div>
               </div>

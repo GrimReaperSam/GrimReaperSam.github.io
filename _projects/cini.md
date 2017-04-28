@@ -63,4 +63,11 @@ is the City in which the painting can be found. The end result of the process is
 {: .text-center .margBSmall}
 
 After that each identified section is cropped and parsed using **[Tesseract OCR](https://github.com/tesseract-ocr/tesseract)**, and the results are stored in a json
-file as a set of keys and values for this image.
+file as a set of keys and values for this image, giving a result similar to the below structure:
+
+``` json
+"City" : "COLONIA",
+"Author": "GIOVANNI FRANCESCO da RIMINI (attr.)",
+"Attribution": "FONDO G. FIOCCO",
+"Museum": "MUSEO DIOCESANO", ...
+```
