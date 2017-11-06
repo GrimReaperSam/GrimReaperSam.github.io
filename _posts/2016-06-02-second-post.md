@@ -5,6 +5,7 @@ excerpt_separator: <!--more-->
 tags:
   - potato
   - tomato
+category: languages
 published: false
 ---
 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium

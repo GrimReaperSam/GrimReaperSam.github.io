@@ -10,6 +10,7 @@ jss:
   - d3.v4.min
   - posts/genetic algorithm/chromosome
   - posts/genetic algorithm/ga
+category: cs
 published: false
 ---
 <div class="post-media margBSmall" markdown="1">

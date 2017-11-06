@@ -864,11 +864,6 @@ span.meta-date{
 }
 
 
-.block-posts .block-post:last-child {
-	margin-bottom:40px;
-}
-
-
 .block-posts .block-post.single:last-child {
 	margin-bottom:0;
 }
