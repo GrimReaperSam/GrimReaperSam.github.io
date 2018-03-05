@@ -27,7 +27,7 @@ This project aims to create a carpooling Android application with a server that 
 
 The result was a client-server application in which the client was a user friendly Android application that allows users to specify their schedules and view their respective rides and drivers after the scheduler has assigned the routes. The server consisted of a **Genetic Algorithm (GA)** that receives user requests and runs overnight, it makes use of Google Maps to calculate a fair and efficient route for all the users and sends back the results. The calculation took into account the users origin and destination, as well as their departure and arrival time windows. It also accounted for fairness, which means rotating drivers over the week so that everybody gets to be a passenger sometime. The algorithm was similarly able to include user preferences such as smoking, age range, and preferred car capacity.
 
-The project was successful and resulted in two publications {% cite dakroub2013intelligent boukhater2014intelligent %}, as well as gaining the best poster award at the American University of Beirut FEA Student and Alumni Conference, year 2013.
+The project was successful and resulted in two publications {% cite dakroub2013intelligent boukhater2014intelligent %} as well as gaining the best poster award at the American University of Beirut FEA Student and Alumni Conference, year 2013.
 
 Below are some images from the Android user application.
 

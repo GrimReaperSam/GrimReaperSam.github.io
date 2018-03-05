@@ -18,9 +18,9 @@
 
 - position: Software Developer Intern
   company: Sony Europe Limited
-  period: Feb 2017 - <span class="current">Present</span>
+  period: Feb 2017 - Aug 2017
   works:
     - work: Audio speech recognition using VGG networks
     - work: Neural network development using Sony's NNAbla
     - work: Tools for NNabla such as network graph drawing and activation visualization
-  technologies: C/C++, Cython, Python, DNN, Open Grid Engine
+  technologies: C/C++, Cython, Python, NNabla, Open Grid Engine
