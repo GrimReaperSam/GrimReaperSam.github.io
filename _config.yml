@@ -3,6 +3,8 @@ gems: ['jekyll/scholar']
 collections:
   projects:
     output: true
+  publications:
+    output: true
 
 scholar:
   style: _bibliography/ieee-with-url.csl

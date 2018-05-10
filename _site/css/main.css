@@ -176,7 +176,7 @@
   width: 100%;
 }
 
-.fixed-nav-bar.main-nav.tabbed ul li{float:left;width:25%;border-right:1px solid #26292e;border-bottom:none;}
+.fixed-nav-bar.main-nav.tabbed ul li{float:left;width:20%;border-bottom:none;}
 .fixed-nav-bar.main-nav.tabbed ul li:last-child{border-right:none;border-bottom:none;}
 
 .main-nav ul li{
