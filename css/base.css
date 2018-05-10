@@ -512,3 +512,4 @@ iframe{width:100%;frameborder:0;display:inline-block;}
 /* #Extras
 ================================================== */
 a, a:hover, a:active {color:#333333; font-family:'open_sansbold',Arial,sans-serif;}
+a.disabled {pointer-events:none;cursor:default}
