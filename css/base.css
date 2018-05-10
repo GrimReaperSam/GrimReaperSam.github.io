@@ -507,3 +507,8 @@ iframe{width:100%;frameborder:0;display:inline-block;}
 	.bgGrey{background:#efefef;}
 	.bgWhite{background:#ffffff;}
 	.bgBeige{background:#f6f0e4;}
+
+
+/* #Extras
+================================================== */
+a, a:hover, a:active {color:#333333; font-family:'open_sansbold',Arial,sans-serif;}
