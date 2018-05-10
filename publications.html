@@ -35,7 +35,12 @@ title: Publications
 									<img class="media-object" alt="" src="{{base}}/{{item.image_path}}" style="width:80%;margin:0 auto"/>
 								</div>
 								<div class="media-body media-middle">
-									<h4><a href="{{item.pdf}}">{{item.title}}</a></h4>
+									<h4>
+										{% if item.pdf %}
+											<a href="{{item.pdf}}">{{item.title}}</a></h4>
+										{% else %}
+											<a class="disabled" href="{{item.pdf}}">{{item.title}}</a></h4>
+										{% endif %}
 									<p><em>{{item.authors}}</em></p>
 									<p>{{item.conference}}</p>
 									<p>{{item.excerpt}}</p>

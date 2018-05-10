@@ -5,5 +5,5 @@ title: An Intelligent and Fair GA Carpooling Scheduler as a Social Solution for 
 conference: MELECON 2014
 authors: Carl Michael Boukhater, Oussama Dakroub, Fayez Lahoud, Mariette Awad, Hassan Artail
 date: 2014-1-1 00:00:00 +0000
-pdf: http://dx.doi.org/10.1109/MELCON.2014.6820528
+pdf: https://ieeexplore.ieee.org/abstract/document/6820528/
 ---
