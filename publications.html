@@ -43,6 +43,9 @@ title: Publications
 										{% endif %}
 									<p><em>{{item.authors}}</em></p>
 									<p>{{item.conference}}</p>
+									{% if item.code %}
+										<a href="{{item.code}}">Code</a>
+									{% endif %}
 									<p>{{item.excerpt}}</p>
 								</div>
 							</div>
