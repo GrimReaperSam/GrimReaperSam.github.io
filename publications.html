@@ -56,7 +56,7 @@ title: Publications
 								</div>
 							</div>
 							
-							
+							{% if forloop.last == false %}
 							<div class="divider-m tCenter margTSSmall margBSmall clearfix">
 								<div class="col-md-12">
 									<div class="zigzag medium clearfix " data-svg-drawing="yes">
@@ -67,6 +67,7 @@ title: Publications
 									</div>
 								</div>
 							</div>
+							{% endif %}
 							<!--End item-->
 						{% endfor %}
                     </div>
