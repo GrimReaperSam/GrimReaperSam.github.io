@@ -18,8 +18,7 @@ title: About
 
     <div class="bottom-header bgWhite ofsTSmall ofsBSmall tCenter">
       <ul class="social">
-        <li><a href="https://www.facebook.com/fayez.lahoud"><i class="icon-facebook"></i></a></li>
-        <li><a href="https://twitter.com/fayez_lahoud"><i class="icon-twitter"></i></a></li>
+		<li><a href="mailto:fayez.lahoud@gmail.com"><i class="icon-mail"></i></a></li>
         <li><a href="https://lb.linkedin.com/in/fayezlahoud"><i class="icon-linkedin"></i></a></li>
         <li><a href="https://github.com/GrimReaperSam"><i class="icon-github"></i></a></li>
       </ul>
@@ -64,60 +63,83 @@ title: About
           <div class="row">
 
 				<p class="margBMSSSmall">
-					I am currently a PhD student in the <a href='https://ivrl.epfl.ch/'>IVRL</a> group of EPFL, headed by Professor
-					<a href="https://ivrl.epfl.ch/people/susstrunk">Sabine Süsstrunk</a>. I obtained my Masters degree in Computer Science
-					at <a href="http://epfl.ch">EPFL</a> doing my thesis in this same lab.
+					I am currently a PhD student in the IVRL group of EPFL, headed by Professor
+					Sabine Süsstrunk. I obtained my Masters degree in Computer Science
+					at EPFL doing my thesis in this same lab.
 			  </p>
 			  <p class="margBMSSSmall">
-					I have previously worked at <a href="https://www.stuttgart.sony.de/">Sony Europe Ltd</a>,
+					I have previously worked at Sony Europe Ltd,
 					where I researched the use of convolutional neural network for speech recognition. I have also worked as an intern at
-					<a href="https://www.vidinoti.com/">Vidinoti SA</a> where I developed a javascript AR tracking library.
+					Vidinoti SA where I developed a javascript AR tracking library.
 			  </p>
 			  <p class="margBMSSSmall">
 					My research interests are in Computer Vision and Graphics, specifically to apply machine learning for image processing tasks.
 			  </p>
 
+				
             </div>
             <!--End row-->
-
+			{% include download_cv.html %}
           </div>
           <!--End block content-->
 
+          </div>
+          <!--End content-->
+		  
+		  <!--Main title-->
+          <div class="main-title">
+            <h1>news</h1>
+            {% include zigzag-divider.html %}
+          </div>
+          <!--End main title-->
 
-          <!--Block content-->
-          <div class="block-content">
-            <div class="info">
-              <!--Row-->
-              <div class="row">
-                <div class="col-md-6">
-                  <ul class="info-list clearfix">
-                    <li><span class="inf">Name </span> <span
-                      class="value">Fayez Lahoud</span></li>
-                      <li><span class="inf">Date of birth</span> <span class="value"> January 16, 1992 </span>
-                      </li>
-                      <li><span class="inf">Email</span> <span class="value">fayezlahoud@gmail.com</span>
-                      </li>
-                    </ul>
+          <!--Content-->
+          <div class="content">
+            <!--Block content-->
+            <div class="block-content ">
+              <!--Timeline-->
+              <div class="timeline publications">
+                <!--Row-->
+                <div class="row ">
+                  <div class="col-md-12">
+                    <!--Publications holder-->
+                    <div class="exp-holder margTop">
+					  <div class="exp">
+                        <div class="hgroup">
+                            <h4><a href="http://www.imaging.org/site/IST/IST/Conferences/EI/EI_2019/Conferences.aspx">Electronic Imaging 2019</a></h4>
+                            <h6><i class="icon-calendar"></i>Jan 2019</h6>
+                        </div>
+                        <p>I will be giving two presentations about super resolution in Computational Imaging XVII and virtual reality in 
+						The Engineering Reality of Virtual Reality 2019 at EI 2019 in California.</p>
+                      </div>
+					  
+					  <div class="exp">
+                        <div class="hgroup">
+                            <h4><a href="http://www.imaging.org/site/IST/IST/Conferences/CIC/CIC_Home.aspx">26th Color and Imaging Conference</a></h4>
+                            <h6><i class="icon-calendar"></i>Nov 2018</h6>
+                        </div>
+                        <p>I will give a presentation about image re-coloring in the deep learning and color workshop
+						at CIC 26 in Vancouver.</p>
+                      </div>
+					  
+					  <div class="exp">
+                        <div class="hgroup">
+                            <h4>Won <a href="http://users.cecs.anu.edu.au/~arobkell/PIRM2018/www/PIRM-HS-SR.html">PIRM 2018 Challenge on Spectral Image Super-Resolution</a></h4>
+                            <h6><i class="icon-calendar"></i>Sep 2018</h6>
+                        </div>
+                        <p>I won the challenge with IVRL members R. Zhou and S. Süsstrunk. </br> I will be giving a spotlight presentation
+						at PIRM 2018 in Munich about our solution.</p>
+                      </div>
+                    </div>
+                    <!--End publications holder-->
                   </div>
-
-                  <div class="col-md-6">
-                    <ul class="info-list">
-                      <li><span class="inf">Phone</span> <span class="value"> +41 078 848 01 94	</span>
-                      </li>
-                      <li><span class="inf">Address</span> <span class="value"> Chemin des Glycines 1 </span>
-                      </li>
-                      <li><span class="inf">City</span> <span class="value"> 1004 Lausanne</span>
-                      </li>
-                    </ul>
-                  </div>
-
                 </div>
                 <!--End row-->
               </div>
+              <!--End timeline-->
             </div>
             <!--End block content-->
           </div>
-          <!--End content-->
 
 
           <!--Main title-->
@@ -141,7 +163,7 @@ title: About
                   <div class="col-md-12">
                     <!--Experience holder-->
                     <div class="exp-holder margTop">
-                      {% for education in site.data.educations %}
+                      {% for education in site.data.educations reversed %}
                       <div class="exp">
                         <div class="hgroup">
                           <h4>{{education.degree}} - {{education.university}}</h4>
@@ -185,7 +207,7 @@ title: About
                   <div class="col-md-12">
                     <!--Experience holder-->
                     <div class="exp-holder margTop">
-                      {% for experience in site.data.experiences %}
+                      {% for experience in site.data.experiences reversed %}
                       <div class="exp">
                         <div class="hgroup">
                           <h4>{{experience.position}} - {{experience.company}}</h4>
@@ -242,64 +264,6 @@ title: About
             <!--End block content-->
           </div>
           <!--End content-->
-		  
-		  <!--Main title-->
-          <div class="main-title">
-            <h1>news</h1>
-            {% include zigzag-divider.html %}
-          </div>
-          <!--End main title-->
-
-          <!--Content-->
-          <div class="content">
-            <!--Block content-->
-            <div class="block-content ">
-              <!--Timeline-->
-              <div class="timeline publications">
-                <!--Row-->
-                <div class="row ">
-                  <div class="col-md-12">
-                    <!--Publications holder-->
-                    <div class="exp-holder margTop">
-                      <div class="exp">
-                        <div class="hgroup">
-                            <h4>Won <a href="http://users.cecs.anu.edu.au/~arobkell/PIRM2018/www/PIRM-HS-SR.html">PIRM 2018 Challenge on Spectral Image Super-Resolution</a></h4>
-                            <h6><i class="icon-calendar"></i>Sep 2018</h6>
-                        </div>
-                        <p>I won the challenge with IVRL members R. Zhou and S. Süsstrunk. </br> I will be giving a spotlight presentation
-						at <a href="www.pirm2018.org">PIRM 2018</a> in Munich about our solution.</p>
-                      </div>
-					  
-					  <div class="exp">
-                        <div class="hgroup">
-                            <h4><a href="http://www.imaging.org/site/IST/IST/Conferences/CIC/CIC_Home.aspx">26th Color and Imaging Conference</a></h4>
-                            <h6><i class="icon-calendar"></i>Nov 2018</h6>
-                        </div>
-                        <p>I will give a presentation about image re-coloring in the deep learning and color workshop
-						at <a href="http://www.imaging.org/site/IST/IST/Conferences/CIC/CIC_Home.aspx">CIC 26</a> in Vancouver.</p>
-                      </div>
-					  
-					  <div class="exp">
-                        <div class="hgroup">
-                            <h4><a href="http://www.imaging.org/site/IST/IST/Conferences/EI/EI_2019/Conferences.aspx">Electronic Imaging 2019</a></h4>
-                            <h6><i class="icon-calendar"></i>Jan 2019</h6>
-                        </div>
-                        <p>I will be giving two presentations about super resolution in <a href="http://www.imaging.org/site/IST/IST/Conferences/EI/EI_2019/Conference/C_COIMG.aspx">
-						Computational Imaging XVII</a> and virtual reality in <a href="http://www.imaging.org/site/IST/IST/Conferences/EI/EI_2019/Conference/C_ERVR.aspx">
-						The Engineering Reality of Virtual Reality 2019</a> at EI 2019 in California.</p>
-                      </div>
-                    </div>
-                    <!--End publications holder-->
-                  </div>
-                </div>
-                <!--End row-->
-              </div>
-              <!--End timeline-->
-            </div>
-            <!--End block content-->
-          </div>
-
-          {% include download_cv.html %}
 
         </div>
         <!--End about-->
