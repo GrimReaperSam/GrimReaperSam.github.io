@@ -6,6 +6,6 @@ conference: ICIP 2017
 authors: Fayez Lahoud, Bin Jin, Maria V. Ortiz Segovia, Sabine Susstrunk
 date: 2017-1-1 00:00:00 +0000
 code: https://github.com/GrimReaperSam/SILE
-pdf: papers/ICIP-2017-Lahoud.pdf
+pdf: papers/ICIP-2017-Paper.pdf
 poster: papers/ICIP-2017-Poster.pdf
 ---
