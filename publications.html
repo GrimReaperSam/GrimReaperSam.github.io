@@ -42,7 +42,9 @@ title: Publications
 											<a class="disabled" href="{{item.pdf}}">{{item.title}}</a></h4>
 										{% endif %}
 									<p><em>{{item.authors}}</em></p>
-									<p>{{item.conference}}</p>
+									{% if item.conference %}
+										<p>{{item.conference}}</p>
+									{% endif %}
 									{% if item.pdf %}
 										<a href="{{item.pdf}}">[Paper]</a>
 									{% endif %}
