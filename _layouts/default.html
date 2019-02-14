@@ -90,5 +90,8 @@
 </div>
 <!--End wrapper-->
 
+{% if jekyll.environment == 'production' %}
+{% include analytics.html %}
+{% endif %}
 </body>
 </html>
