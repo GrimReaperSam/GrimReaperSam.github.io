@@ -8,6 +8,7 @@ title: Digitizing archived paintings
 * Job: **{{page.category}}**
 * Date : **Feb 2016 - May 2016**
 * Technologies: **Python, Anaconda, OpenCV, Image Processing, Layout analysis, Optical Character Recognition**
+* Code: **<a href="https://github.com/GrimReaperSam/Cini-OCR">https://github.com/GrimReaperSam/Cini-OCR</a>**
 
 ---
 

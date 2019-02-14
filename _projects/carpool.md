@@ -20,6 +20,7 @@ images:
 * Job: **{{page.category}}**
 * Date : **Sep 2012 - May 2013**
 * Technologies: **Genetic Algorithms, Client-Server Architecture, GoogleMaps API, Java, Android**
+* Code: **<a href="https://bitbucket.org/GrimReaperSam/genetic-scheduler">https://bitbucket.org/GrimReaperSam/genetic-scheduler</a>**
 
 ---
 
