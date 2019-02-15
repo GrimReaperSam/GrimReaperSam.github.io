@@ -141,8 +141,8 @@
 
 <p>The <strong><a href="http://www.cini.it/en/foundation">Giorgio Cini Foundation</a></strong> is a non-profit cultural instituation located in Venice, Italy.
 It aims to create a cultural center in the Island of San Giorgio Maggiore. As part of this goal,
-I worked on a semester project at EPFL (<strong><a href="http://dhlab.epfl.ch">DHLAB</a></strong>) to automate the digitiation of a large dataset of painting photos.
-The scans, front and back shown below, need be processed and then associated with their paintings and textual description.
+I worked on a semester project at EPFL (<strong><a href="http://dhlab.epfl.ch">DHLAB</a></strong>) to automate the digitization of a large dataset of painting photos.
+The scans, front and back, need to be processed and then associated with their paintings and textual description.
 The final pipeline takes as input the front and back scans, and returns the bounding boxes
 of the painting, the text area and the barcode. It also recognizes each text section individually as well
 as their textual information using OCR.</p>
@@ -150,9 +150,9 @@ as their textual information using OCR.</p>
 <p class="margBMSSSmall"><img src="/img/projects/cini/front.png" alt="Front" title="Front" /></p>
 <h1 class="text-center margBSmall" id="recto-scan"><strong>Recto scan</strong></h1>
 
-<p>Using different morphology operators, gradients, and OTSU thresholding completed by some dimension and position constraints, the painting and
-text boxes were identified and cropped from the image and re-aligned. The painting is identified as the largest cluster remaining after processing the image,
-while the text area is found by taking the lowest horizontal using Hough Transform line that’s above the painting box. The results from the previous image are shown below.</p>
+<p>Using different morphology operators, gradients, and OTSU thresholding under spatial constraints, the painting and
+text boxes are identified and cropped from the image and re-aligned. The painting is identified as the largest cluster remaining after processing the image,
+while the text area is found by taking the lowest horizontal line above the painting box, located using the Hough Transform. The results from the previous image are shown below.</p>
 
 <p class="margBMSSSmall"><img src="/img/projects/cini/painting.png" alt="Painting" title="Painting" /></p>
 <h1 class="text-center margBSmall" id="painting"><strong>Painting</strong></h1>
@@ -160,19 +160,19 @@ while the text area is found by taking the lowest horizontal using Hough Transfo
 <p class="margBMSSSmall"><img src="/img/projects/cini/text-area.png" alt="Text Area" title="Text Area" /></p>
 <h1 class="text-center margBSmall" id="text-area"><strong>Text Area</strong></h1>
 
-<p>From there, the text area is taken and processed using a layout analysis tool: <strong><a href="https://github.com/mittagessen/kraken">Kraken</a></strong>. It tries to find the smallest
+<p>The text area is taken and processed using a layout analysis tool: <strong><a href="https://github.com/mittagessen/kraken">Kraken</a></strong>. It tries to find the smallest
 bounding boxes in an image giving a result like this:</p>
 
 <p class="margBMSSSmall"><img src="/img/projects/cini/text-location.png" alt="Text Location" title="Text Location" /></p>
 <h1 class="text-center margBSmall" id="text-location"><strong>Text Location</strong></h1>
 
-<p>Text text area is also processed using Frangi Filters, which are able to find ridges in the image, allowing to find thing edges separating similar regions in it.
+<p>Text text area is also processed using Frangi Filters, which are able to find ridges in the image (ridges are edges between two similar regions).
 The result is an image segmentation separating all the parts of the text area as follows:</p>
 
 <p class="margBMSSSmall"><img src="/img/projects/cini/layout-analysis.png" alt="Layout Analysis" title="Layout Analysis" /></p>
 <h1 class="text-center margBSmall" id="layout-analysis"><strong>Layout Analysis</strong></h1>
 
-<p>The results from both methods are merged together, and sorted vertically and horizontally in order to classify each area. For example the top-left most area
+<p>The results from both methods are merged together, and sorted vertically and horizontally in order to classify each area. For example the top-leftmost area
 is the City in which the painting can be found. The end result of the process is something like this:</p>
 
 <p class="margBMSSSmall"><img src="/img/projects/cini/text-classification.png" alt="Text Classification" title="Text Classification" /></p>
@@ -181,10 +181,14 @@ is the City in which the painting can be found. The end result of the process is
 <p>After that each identified section is cropped and parsed using <strong><a href="https://github.com/tesseract-ocr/tesseract">Tesseract OCR</a></strong>, and the results are stored in a json
 file as a set of keys and values for this image, giving a result similar to the below structure:</p>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"City"</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="s2">"COLONIA"</span><span class="err">,</span><span class="w">
-</span><span class="s2">"Author"</span><span class="err">:</span><span class="w"> </span><span class="s2">"GIOVANNI FRANCESCO da RIMINI (attr.)"</span><span class="err">,</span><span class="w">
-</span><span class="s2">"Attribution"</span><span class="err">:</span><span class="w"> </span><span class="s2">"FONDO G. FIOCCO"</span><span class="err">,</span><span class="w">
-</span><span class="s2">"Museum"</span><span class="err">:</span><span class="w"> </span><span class="s2">"MUSEO DIOCESANO"</span><span class="err">,</span><span class="w"> </span><span class="err">...</span><span class="w">
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"city"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"COLONIA"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GIOVANNI FRANCESCO da RIMINI (attr.)"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"attribution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FONDO G. FIOCCO"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"museum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MUSEO DIOCESANO"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dormitio Virginis."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Rheinisches Museum Colonia"</span><span class="p">,</span><span class="w"> </span><span class="s2">"3346"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 </div>
 

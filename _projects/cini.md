@@ -14,8 +14,8 @@ title: Digitizing archived paintings
 
 The **[Giorgio Cini Foundation](http://www.cini.it/en/foundation)** is a non-profit cultural instituation located in Venice, Italy.
 It aims to create a cultural center in the Island of San Giorgio Maggiore. As part of this goal,
-I worked on a semester project at EPFL (**[DHLAB](http://dhlab.epfl.ch)**) to automate the digitiation of a large dataset of painting photos.
-The scans, front and back shown below, need be processed and then associated with their paintings and textual description.
+I worked on a semester project at EPFL (**[DHLAB](http://dhlab.epfl.ch)**) to automate the digitization of a large dataset of painting photos.
+The scans, front and back, need to be processed and then associated with their paintings and textual description.
 The final pipeline takes as input the front and back scans, and returns the bounding boxes
 of the painting, the text area and the barcode. It also recognizes each text section individually as well
 as their textual information using OCR.
@@ -25,9 +25,9 @@ as their textual information using OCR.
 # **Recto scan**
 {: .text-center .margBSmall}
 
-Using different morphology operators, gradients, and OTSU thresholding completed by some dimension and position constraints, the painting and
-text boxes were identified and cropped from the image and re-aligned. The painting is identified as the largest cluster remaining after processing the image,
-while the text area is found by taking the lowest horizontal using Hough Transform line that's above the painting box. The results from the previous image are shown below.
+Using different morphology operators, gradients, and OTSU thresholding under spatial constraints, the painting and
+text boxes are identified and cropped from the image and re-aligned. The painting is identified as the largest cluster remaining after processing the image,
+while the text area is found by taking the lowest horizontal line above the painting box, located using the Hough Transform. The results from the previous image are shown below.
 
 ![Painting]({{base}}/img/projects/cini/painting.png "Painting")
 {: .margBMSSSmall}
@@ -39,7 +39,7 @@ while the text area is found by taking the lowest horizontal using Hough Transfo
 # **Text Area**
 {: .text-center .margBSmall}
 
-From there, the text area is taken and processed using a layout analysis tool: **[Kraken](https://github.com/mittagessen/kraken)**. It tries to find the smallest
+The text area is taken and processed using a layout analysis tool: **[Kraken](https://github.com/mittagessen/kraken)**. It tries to find the smallest
 bounding boxes in an image giving a result like this:
 
 ![Text Location]({{base}}/img/projects/cini/text-location.png "Text Location")
@@ -47,7 +47,7 @@ bounding boxes in an image giving a result like this:
 # **Text Location**
 {: .text-center .margBSmall}
 
-Text text area is also processed using Frangi Filters, which are able to find ridges in the image, allowing to find thing edges separating similar regions in it.
+Text text area is also processed using Frangi Filters, which are able to find ridges in the image (ridges are edges between two similar regions).
 The result is an image segmentation separating all the parts of the text area as follows:
 
 ![Layout Analysis]({{base}}/img/projects/cini/layout-analysis.png "Layout Analysis")
@@ -55,7 +55,7 @@ The result is an image segmentation separating all the parts of the text area as
 # **Layout Analysis**
 {: .text-center .margBSmall}
 
-The results from both methods are merged together, and sorted vertically and horizontally in order to classify each area. For example the top-left most area
+The results from both methods are merged together, and sorted vertically and horizontally in order to classify each area. For example the top-leftmost area
 is the City in which the painting can be found. The end result of the process is something like this:
 
 ![Text Classification]({{base}}/img/projects/cini/text-classification.png "Text Classification")
@@ -67,8 +67,12 @@ After that each identified section is cropped and parsed using **[Tesseract OCR]
 file as a set of keys and values for this image, giving a result similar to the below structure:
 
 ``` json
-"City" : "COLONIA",
-"Author": "GIOVANNI FRANCESCO da RIMINI (attr.)",
-"Attribution": "FONDO G. FIOCCO",
-"Museum": "MUSEO DIOCESANO", ...
+{
+    "city" : "COLONIA",
+    "author": "GIOVANNI FRANCESCO da RIMINI (attr.)",
+    "attribution": "FONDO G. FIOCCO",
+    "museum": "MUSEO DIOCESANO",
+    "title": "Dormitio Virginis.",
+    "details": ["Rheinisches Museum Colonia", "3346"]
+}
 ```
