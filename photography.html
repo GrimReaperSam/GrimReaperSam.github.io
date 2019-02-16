@@ -1,0 +1,69 @@
+---
+layout: default
+title: Photography
+---
+<!-- '{% raw %}<a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /><span>{{likes}}{{comments}}</span></a>{% endraw %}', -->
+
+<script type="text/javascript" src="js/instafeed.min.js"></script>
+<script type="text/javascript">
+    var userFeed = new Instafeed({
+      get: 'user',
+      userId: '2241579931',
+      accessToken: '2241579931.0d17d61.efd05cba328b4896b806c701cbf3f82f',
+      resolution: 'standard_resolution',
+      success: function(data) {
+          for (i = 0; i < data.data.length; i++) {
+              data.data[i]['date'] = new Date(data.data[i].created_time*1000).toLocaleDateString("de");
+          }
+      },
+      template: '{% raw %}<li class="col-md-4"><div class="item"><a class="box" href="{{link}}"><div class="desc desc-photo"><h3 class="proj-desc">{{location}}<div class="zigzag work clearfix" data-svg-drawing="yes"><svg  xml:space="preserve" viewBox="0 0 69.172 14.975" width="25" height="10" y="0px" x="0px" xmlns="http://www.w3.org/2000/svg" version="1.1"><path d="M1.357,12.26 10.807,2.81 20.328,12.332 29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 "  style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"/></svg></div><span>{{model.date}}<br />{{caption}}</span></h3></div><img class="photography-image" alt="" src="{{image}}"></a></div></li>{% endraw %}',
+      sortBy: 'most-recent',
+      limit: 18,
+      links: false
+    });
+    userFeed.run();
+  </script>
+
+<div id="content-div" class="col-md-12">
+<!--Portfolio Tab-->
+<section id="portfolio" class="bgWhite ofsInBottom">
+    <!--Portfolio -->
+    <div class="portfolio">
+        <!--Main title-->
+        <div class="main-title">
+            <h1>My latest posts on Instagram</h1>
+            {% include zigzag-divider.html %}
+        </div>
+        <!--End main title-->
+
+        <!--Content-->
+        <div class="content">
+            <!--Block content-->
+            <div class="block-content ">
+                <!--Works-->
+                <div class="works">
+
+                    <!--Row-->
+                    <div class="row">
+                        <ul class="work">
+                            <div id="instafeed"></div>
+                        </ul>
+                    </div>
+                    <!--End row-->
+                </div>
+                <!--End works-->
+
+                <div class="clearfix"></div>
+
+            </div>
+            <!--End block content-->
+        </div>
+        <!--End content-->
+
+
+    </div>
+    <!--End portfolio-->
+
+</section>
+<!--End portfolio tab-->
+</div>
