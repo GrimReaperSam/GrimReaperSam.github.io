@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 210 297"
+   height="297mm"
+   width="210mm"
+   inkscape:version="0.92.3 (unknown)"
+   sodipodi:docname="paletizer.svg">
+  <defs
+     id="defs2">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Component Transfer"
+       id="filter4929">
+      <feComponentTransfer
+         id="feComponentTransfer4927">
+        <feFuncR
+           type="identity"
+           tableValues="1 0"
+           id="feFuncR4919" />
+        <feFuncG
+           type="identity"
+           tableValues="1 0"
+           id="feFuncG4921" />
+        <feFuncB
+           type="identity"
+           tableValues="1 0"
+           id="feFuncB4923" />
+        <feFuncA
+           type="identity"
+           tableValues="0 1"
+           id="feFuncA4925" />
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     inkscape:window-maximized="1"
+     inkscape:window-y="24"
+     inkscape:window-x="1920"
+     inkscape:window-height="1004"
+     inkscape:window-width="1920"
+     showborder="false"
+     inkscape:snap-to-guides="true"
+     showgrid="false"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="560"
+     inkscape:cx="-141.42857"
+     inkscape:zoom="0.35"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.26458332"
+       id="rect3843"
+       width="446.01187"
+       height="341.69049"
+       x="-281.21429"
+       y="-20.5"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150" />
+    <g
+       id="g5355"
+       transform="matrix(0.34106412,0,0,0.34106412,58.081129,102.99007)"
+       style="fill:#ff0100;fill-opacity:1" />
+    <g
+       id="g5543"
+       transform="matrix(1.0615001,0,0,1.0615001,9.7331337,-2.0920322)"
+       inkscape:export-xdpi="150"
+       inkscape:export-ydpi="150">
+      <circle
+         inkscape:export-ydpi="150"
+         inkscape:export-xdpi="150"
+         style="fill:#ff0000;fill-opacity:1;stroke-width:0.13851915"
+         r="18.996912"
+         cy="143.60551"
+         cx="-64.005165"
+         id="path3746" />
+      <text
+         inkscape:export-ydpi="150"
+         inkscape:export-xdpi="150"
+         id="text3812"
+         y="157.27254"
+         x="-127.81205"
+         style="font-style:normal;font-weight:normal;font-size:43.5982132px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.08995533"
+         xml:space="preserve"><tspan
+           style="stroke-width:1.08995533"
+           y="157.27254"
+           x="-127.81205"
+           id="tspan3810"
+           sodipodi:role="line">+</tspan></text>
+      <text
+         inkscape:export-ydpi="150"
+         inkscape:export-xdpi="150"
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:43.5982132px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.08995533"
+         x="-36.728821"
+         y="157.25125"
+         id="text3816"><tspan
+           sodipodi:role="line"
+           id="tspan3814"
+           x="-36.728821"
+           y="157.25125"
+           style="stroke-width:1.08995533">=</tspan></text>
+      <g
+         transform="matrix(0.34106411,0,0,0.34106411,58.081145,108.65971)"
+         id="g5472"
+         style="fill:#ff0100;fill-opacity:1">
+        <g
+           id="g5323"
+           style="fill:#ff0100;fill-opacity:1">
+          <use
+             id="use5308"
+             xlink:href="#b"
+             style="fill:#ff0100;fill-opacity:1;stroke:#ffffff;stroke-width:14.39999962"
+             x="0"
+             y="0"
+             width="100%"
+             height="100%" />
+          <use
+             id="use5310"
+             transform="scale(-1,1)"
+             xlink:href="#a"
+             x="0"
+             y="0"
+             width="100%"
+             height="100%"
+             style="fill:#ff0100;fill-opacity:1" />
+          <g
+             id="a"
+             style="fill:#ff0100;fill-opacity:1;stroke:#ffffff;stroke-width:7.19999981">
+            <rect
+               id="rect5312"
+               x="14"
+               y="-86"
+               width="13"
+               height="86"
+               transform="rotate(29)"
+               rx="6.5"
+               style="fill:#ff0100;fill-opacity:1" />
+            <rect
+               x="-143"
+               y="41"
+               width="48"
+               height="133"
+               rx="24"
+               id="c"
+               style="fill:#ff0100;fill-opacity:1" />
+            <use
+               id="use5315"
+               xlink:href="#c"
+               x="85"
+               y="97"
+               width="100%"
+               height="100%"
+               style="fill:#ff0100;fill-opacity:1" />
+          </g>
+          <g
+             id="b"
+             style="fill:#ff0100;fill-opacity:1">
+            <ellipse
+               id="ellipse5318"
+               ry="84"
+               rx="91"
+               cy="41"
+               cx="0"
+               style="fill:#ff0100;fill-opacity:1" />
+            <rect
+               id="rect5320"
+               x="-91"
+               y="20"
+               width="182"
+               height="182"
+               rx="22"
+               style="fill:#ff0100;fill-opacity:1" />
+          </g>
+        </g>
+        <g
+           id="g5331"
+           style="fill:#ff0100;fill-opacity:1;stroke:#ffffff;stroke-width:7.19999981">
+          <path
+             id="path5325"
+             d="M -95,44.5 H 95"
+             inkscape:connector-curvature="0"
+             style="fill:#ff0100;fill-opacity:1" />
+          <circle
+             id="circle5327"
+             r="4"
+             cx="-42"
+             cy="0"
+             style="fill:#ff0100;fill-opacity:1" />
+          <circle
+             id="circle5329"
+             r="4"
+             cx="42"
+             cy="0"
+             style="fill:#ff0100;fill-opacity:1" />
+        </g>
+      </g>
+      <g
+         transform="matrix(0.34106412,0,0,0.34106412,-186.09148,108.65971)"
+         id="g5456">
+        <g
+           style="fill:#a4c639"
+           id="g5424">
+          <use
+             height="100%"
+             width="100%"
+             y="0"
+             x="0"
+             style="stroke:#ffffff;stroke-width:14.39999962"
+             xlink:href="#b-7"
+             id="use5409" />
+          <use
+             height="100%"
+             width="100%"
+             y="0"
+             x="0"
+             xlink:href="#a-3"
+             transform="scale(-1,1)"
+             id="use5411" />
+          <g
+             style="stroke:#ffffff;stroke-width:7.19999981"
+             id="a-3">
+            <rect
+               rx="6.5"
+               transform="rotate(29)"
+               height="86"
+               width="13"
+               y="-86"
+               x="14"
+               id="rect5413" />
+            <rect
+               id="c-6"
+               rx="24"
+               height="133"
+               width="48"
+               y="41"
+               x="-143" />
+            <use
+               height="100%"
+               width="100%"
+               y="97"
+               x="85"
+               xlink:href="#c-6"
+               id="use5416" />
+          </g>
+          <g
+             id="b-7">
+            <ellipse
+               cx="0"
+               cy="41"
+               rx="91"
+               ry="84"
+               id="ellipse5419" />
+            <rect
+               rx="22"
+               height="182"
+               width="182"
+               y="20"
+               x="-91"
+               id="rect5421" />
+          </g>
+        </g>
+        <g
+           style="fill:#ffffff;stroke:#ffffff;stroke-width:7.19999981"
+           id="g5432">
+          <path
+             inkscape:connector-curvature="0"
+             d="M -95,44.5 H 95"
+             id="path5426" />
+          <circle
+             cy="0"
+             cx="-42"
+             r="4"
+             id="circle5428" />
+          <circle
+             cy="0"
+             cx="42"
+             r="4"
+             id="circle5430" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
