@@ -2,27 +2,18 @@
 layout: default
 title: Photography
 ---
-<!-- '{% raw %}<a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /><span>{{likes}}{{comments}}</span></a>{% endraw %}', -->
 
-<script type="text/javascript" src="js/instafeed.min.js"></script>
 <script type="text/javascript">
-    var userFeed = new Instafeed({
-      get: 'user',
-      userId: '2241579931',
-      accessToken: '2241579931.0d17d61.efd05cba328b4896b806c701cbf3f82f',
-      resolution: 'standard_resolution',
-      success: function(data) {
-          for (i = 0; i < data.data.length; i++) {
-              data.data[i]['date'] = new Date(data.data[i].created_time*1000).toLocaleDateString("de");
-          }
-      },
-      template: '{% raw %}<li class="col-md-4"><div class="item"><a class="box" href="{{link}}"><div class="desc desc-photo"><h3 class="proj-desc">{{location}}<div class="zigzag work clearfix" data-svg-drawing="yes"><svg  xml:space="preserve" viewBox="0 0 69.172 14.975" width="25" height="10" y="0px" x="0px" xmlns="http://www.w3.org/2000/svg" version="1.1"><path d="M1.357,12.26 10.807,2.81 20.328,12.332 29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 "  style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"/></svg></div><span>{{model.date}}<br />{{caption}}</span></h3></div><img class="photography-image" alt="" src="{{image}}"></a></div></li>{% endraw %}',
-      sortBy: 'most-recent',
-      limit: 18,
-      links: false
+    url = 'https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=fdfcf26714c000010967a246ac83033a&user_id=170036297@N06&format=json&extras=description,url_m,date_taken&nojsoncallback=1';
+    $.getJSON(url, function(data, status){
+        $.each(data.photos.photo, function(i, item){
+            page_url = `https://www.flickr.com/photos/${item.owner}/${item.id}/`;
+            date = new Date(item.datetaken).toLocaleDateString("de");
+            image_box = `<li class="col-md-4 col-sm-6 col-xs-6"><div class="item"><a class="box" href="${page_url}"><div class="desc desc-photo"><h3 class="proj-desc">${item.title}<div class="zigzag work clearfix" data-svg-drawing="yes"><svg  xml:space="preserve" viewBox="0 0 69.172 14.975" width="25" height="10" y="0px" x="0px" xmlns="http://www.w3.org/2000/svg" version="1.1"><path d="M1.357,12.26 10.807,2.81 20.328,12.332 29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 "  style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"/></svg></div><span>${date}<br />${item.description._content}</span></h3></div><img class="photography-image" alt="" src="${item.url_m}"></a></div></li>`
+            $('#instafeed').append(image_box);
+        });
     });
-    userFeed.run();
-  </script>
+</script>
 
 <div id="content-div" class="col-md-12">
 <!--Portfolio Tab-->

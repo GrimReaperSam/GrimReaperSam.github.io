@@ -706,6 +706,8 @@
 
 .item a .photography-image {
     min-height: 333px;
+    max-height: 333px;
+    min-width: 333px;
 }
 
 
@@ -1339,6 +1341,11 @@ span.meta-date{
 	.contact-info li .ico{top:-80px;}
 	.img-profile .name-profile {display:none;}
 
+    .item a .photography-image {
+        min-height: 333px;
+        max-height: 333px;
+        min-width: 333px;
+    }
 }
 
 
@@ -1362,6 +1369,12 @@ span.meta-date{
 	.contact-info li{width:auto;padding-bottom:80px;display:block;text-align:center;}
 	.contact-info li:last-child{padding-bottom:0;}
 	.contact-info li .ico{top:-80px;}
+
+    .item a .photography-image {
+        min-height: 305px;
+        max-height: 305px;
+        min-width: 305px;
+    }
 }
 
 
@@ -1390,6 +1403,12 @@ span.meta-date{
 	.contact-info li:last-child{padding-bottom:0;}
 	.contact-info li .ico{top:-80px;}
 	.block-quote blockquote{padding-right:0;}
+
+    .item a .photography-image {
+        min-height: 287px;
+        max-height: 287px;
+        min-width: 287px;
+    }
 
 }
 
