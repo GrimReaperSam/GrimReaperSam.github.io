@@ -16,7 +16,7 @@
     - work: NPM module for easy calculation of BRIEF descriptors
   technologies: JavaScript, RequireJS, NPM, Gulp, Python, Image processing
 
-- position: Software Developer Intern
+- position: Research Intern
   company: Sony Europe Limited
   period: Feb 2017 - Aug 2017
   works:
@@ -24,3 +24,12 @@
     - work: Neural network development using Sony's NNAbla
     - work: Tools for NNabla such as network graph drawing and activation visualization
   technologies: C/C++, Cython, Python, NNabla, Open Grid Engine
+
+- position: Doctoral Assistant
+  company: Image and Visual Representation Lab (EPFL)
+  period: Mar 2018 - May 2019
+  works:
+    - work: Multi-Spectral image enhancement and super resolution
+    - work: Binary neural network optimization
+    - work: Zero-Learning multi-modal image fusion
+  technologies: Python, PyTorch, MATLAB, C/C++, Image processing, Neural networks
