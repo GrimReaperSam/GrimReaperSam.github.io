@@ -33,3 +33,12 @@
     - work: Binary neural network optimization
     - work: Zero-Learning multi-modal image fusion
   technologies: Python, PyTorch, MATLAB, C/C++, Image processing, Neural networks
+
+- position: Senior R&D Engineer
+  company: Pix4D SA
+  period: June 2019 - Present
+  works:
+    - work: Research and development of 2D and 3D computer vision and deep learning algorithms
+    - work: Management of various research projects within a large team
+    - work: Maintenance of infrastructure and product analytics tools
+  technologies: C/C++, Conan, CMake, Pybind, Python, PyTorch, Concourse
