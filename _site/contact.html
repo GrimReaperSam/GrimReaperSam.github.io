@@ -126,16 +126,10 @@
 
                                 <!--Address info-->
                                 <div class="address-info">
-                                    <i class="icon-location"></i>
-                                    <p>EPFL IC IINFCOM IVRL
-										<br/>
-										BC 318, Station 14
-                                        <br/>
-                                        1015 Lausanne, Switzerland
+                                    <p>Feel free to contact me using any of the below
                                     </p>
                                 </div>
                                 <!--End address info-->
-
 
                                 <!--Contact info-->
                                 <div class="contact-info tCenter">
@@ -201,7 +195,7 @@
                     <!--Row-->
                     <div class="row">
                         <div class="col-md-12">
-                            <form class="contact-form">
+                            <form class="contact-form" id="my-form" action="https://formspree.io/f/xoqzqaoy" method="POST">
 
                                 <!--Input columns-->
                                 <div class="input-columns clearfix">
@@ -216,7 +210,7 @@
                                     <div class="column2">
                                         <div class="column-inner">
                                             <input type="text" placeholder="Email" value="" id="email"
-                                                   name="_replyto">
+                                                   name="email">
                                         </div>
                                     </div>
                                     <!--End column-->
@@ -224,7 +218,7 @@
                                 <!--End input columns-->
 
                                 <input type="text" placeholder="Subject" value="" id="subject"
-                                       name="_subject">
+                                       name="subject">
                                 <input type="text" name="_gotcha" style="display:none" />
                                 <textarea name="message" placeholder="Message" id="message" cols="45"
                                           rows="10"></textarea>
@@ -232,9 +226,7 @@
                             </form>
 
                             <!--Contact form message-->
-                            <div id="sending"><h2>Sending message…</h2></div>
-                            <div id="success"><h2>Your message has been sent. Thank you!</h2></div>
-                            <div id="error"><h2>Sorry your message can not be sent.</h2></div>
+                            <p id="my-form-status"></p>
                             <!--End contact form message-->
 
                         </div>
@@ -269,70 +261,36 @@
 </div>
 
 <script>
+    var form = document.getElementById("my-form");
 
-    $('.contact-form').submit(function() {
-
-        $('input#name').removeClass("errorForm");
-        $('textarea#message').removeClass("errorForm");
-        $('input#email').removeClass("errorForm");
-
-        var error = false;
-        var name = $('input#name').val();
-        if(name == "" || name == " ") {
-            error = true;
-            $('input#name').addClass("errorForm");
-        }
-
-
-        var msg = $('textarea#message').val();
-        if(msg == "" || msg == " ") {
-            error = true;
-            $('textarea#message').addClass("errorForm");
-
-        }
-
-        var email_compare = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
-        var email = $('input#email').val();
-        if (email == "" || email == " ") {
-            $('input#email').addClass("errorForm");
-            error = true;
-        }else if (!email_compare.test(email)) {
-            $('input#email').addClass("errorForm");
-            error = true;
-        }
-
-        if(error == true) {
-            return false;
-        }
-
-        $.ajax({
-            type: "POST",
-            url: '//formspree.io/fayezlahoud@gmail.com',
-            data: $('.contact-form').serialize(),
-            dataType: "json",
-            beforeSend: function() {
-                $('#sending').fadeIn('slow');
-                $('.contact-form')[0].reset()
-            },
-            success: function(message) {
-                $('#sending').hide();
-                if(message.success){
-                    $('#success').fadeIn('slow');
-                } else {
-                    $('#error').fadeIn('slow');
-                }
-            },
-            error: function() {
-                $('#sending').hide();
-                $('#error').fadeIn('slow');
+    async function handleSubmit(event) {
+        event.preventDefault();
+        var status = document.getElementById("my-form-status");
+        var data = new FormData(event.target);
+        fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
             }
-
+        }).then(response => {
+            if (response.ok) {
+                status.innerHTML = "Your message has been sent. Thank you!";
+                form.reset();
+            } else {
+                response.json().then(data => {
+                    if (Object.hasOwn(data, 'errors')) {
+                        status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                    } else {
+                        status.innerHTML = "Sorry your message could not be sent."
+                    }
+                })
+            }
+        }).catch(error => {
+            status.innerHTML = "Sorry your message could not be sent."
         });
-
-        return false;
-    });
-
-
+    }
+    form.addEventListener("submit", handleSubmit);
 </script>
 
         </div>
