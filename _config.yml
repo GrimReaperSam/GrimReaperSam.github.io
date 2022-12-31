@@ -1,5 +1,3 @@
-gems: ['jekyll/scholar']
-
 collections:
   projects:
     output: true
