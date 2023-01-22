@@ -82,50 +82,6 @@ title: About
 
           <!--Main title-->
           <div class="main-title">
-            <h1>education</h1>
-            {% include zigzag-divider.html %}
-          </div>
-          <!--End main title-->
-
-          <!--Content-->
-          <div class="content">
-            <!--Block content-->
-            <div class="block-content">
-              <!--Timeline-->
-              <div class="timeline education">
-                <!--Row-->
-                <div class="row ">
-                  <div class="col-md-12">
-                    <!--Experience holder-->
-                    <div class="exp-holder margTop">
-                      {% for education in site.data.educations reversed %}
-                      <div class="exp">
-                        <div class="hgroup">
-                          <h4>{{education.degree}} - {{education.university}}</h4>
-                          <h6><i class="icon-calendar"></i>{{education.period}}</h6>
-                        </div>
-
-                        <ul>
-                          {% for mention in education.mentions %}
-                          <li>{{mention.mention}}</li>
-                          {% endfor %}
-                        </ul>
-                      </div>
-                      {% endfor %}
-                    </div> <!--End experience holder-->
-                  </div>
-                </div>
-                <!--End row-->
-              </div>
-              <!--End timeline-->
-            </div>
-            <!--End block content-->
-          </div>
-          <!--End content-->
-
-
-          <!--Main title-->
-          <div class="main-title">
             <h1>experience</h1>
             {% include zigzag-divider.html %}
           </div>
@@ -159,6 +115,49 @@ title: About
                       {% endfor %}
                     </div>
                     <!--End experience holder-->
+                  </div>
+                </div>
+                <!--End row-->
+              </div>
+              <!--End timeline-->
+            </div>
+            <!--End block content-->
+          </div>
+          <!--End content-->
+
+          <!--Main title-->
+          <div class="main-title">
+            <h1>education</h1>
+            {% include zigzag-divider.html %}
+          </div>
+          <!--End main title-->
+
+          <!--Content-->
+          <div class="content">
+            <!--Block content-->
+            <div class="block-content">
+              <!--Timeline-->
+              <div class="timeline education">
+                <!--Row-->
+                <div class="row ">
+                  <div class="col-md-12">
+                    <!--Experience holder-->
+                    <div class="exp-holder margTop">
+                      {% for education in site.data.educations reversed %}
+                      <div class="exp">
+                        <div class="hgroup">
+                          <h4>{{education.degree}} - {{education.university}}</h4>
+                          <h6><i class="icon-calendar"></i>{{education.period}}</h6>
+                        </div>
+
+                        <ul>
+                          {% for mention in education.mentions %}
+                          <li>{{mention.mention}}</li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                      {% endfor %}
+                    </div> <!--End experience holder-->
                   </div>
                 </div>
                 <!--End row-->
